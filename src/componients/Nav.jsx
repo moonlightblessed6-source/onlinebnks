@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ally from '../assets/logo/ally.png'
+import logo from '../assets/logo/js_logo_placeholder.svg'
 import {Navbar} from './styled'
 
 const Nav = () => {
     return(
+      // <img src={ally} alt="ally" />
         <Navbar>
           <div className="bottonline">
         <div className="navwrapper">
          <div className="leftLogo">
-            <img src={ally} alt="ally" />
+          <p>Routing number 267080355</p>
          </div>
           <div className="rightItems">
              <div className="atag">
@@ -23,6 +24,21 @@ const Nav = () => {
           </div>
         </div>
           </div>
+
+
+           <div className="bottonwrapper">
+            
+          <div className="downnav">
+            <div className="left"><img src={logo} alt="logo" /></div>
+
+            <div className="right">
+              <Link style={{color: 'black'}}>Personal</Link>
+              <Link style={{color: 'black'}}>Business</Link>
+              <Link style={{color: 'black'}}>Resources</Link>
+              <Link style={{color: 'black'}}>Insurance</Link>
+            </div>
+          </div>
+           </div>
         </Navbar>
     )
 }

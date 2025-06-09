@@ -6,10 +6,12 @@ export const Navbar = styled.nav`
  font-family: "Lato", sans-serif;
   font-weight: 700;
   font-size: 15px;
+  color: whitesmoke;
 
   .bottonline{
-    border-bottom: 1px solid lightgray;
-    padding: 0.6rem 0rem;
+    border-bottom: 1px solid #007cba;
+    padding: 0.3rem 0rem;
+    background-color: #007cba;
   }
 
 .navwrapper{
@@ -18,13 +20,12 @@ export const Navbar = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 
     
 }
 
 .leftLogo{
-    width: 70px;
+    /* width: 70px; */
 }
 
 img{
@@ -48,18 +49,17 @@ img{
     }
     a{
         text-decoration: none;
-        color: #000;
-        opacity: .8;
+        color: whitesmoke;
     }
 
      a:hover{
         border-bottom: 2px solid #300942;
      }
 button{
-    border: 2px solid #300942;
-    padding: 0.8rem 2rem;
-    color:  #300942;
-    background-color: #ffff;
+    border:none;
+    padding: 0.4rem 4rem;
+    color:  black;
+    background-color: #f4cf53;
     border-radius: 30px;
     cursor: pointer;
      font-family: "Lato", sans-serif;
@@ -71,6 +71,25 @@ button{
 
 button:hover{
     background-color: whitesmoke;
+}
+
+.bottonwrapper{
+ box-shadow: 4px 4px 8px;
+ padding: 1.5rem 0rem;
+}
+.downnav{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
 }
 `
 
