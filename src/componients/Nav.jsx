@@ -19,7 +19,7 @@ const Nav = () => {
             <Link>Help</Link>
              </div>
             <div className="btn">
-            <button type="submit">Login</button>
+            <button type="submit">Secure Login</button>
             </div>
           </div>
         </div>

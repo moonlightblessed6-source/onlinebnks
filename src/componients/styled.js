@@ -58,7 +58,7 @@ img{
      }
 button{
     border:none;
-    padding: 0.4rem 4rem;
+    padding: 0.4rem 2rem;
     color:  black;
     background-color: #f4cf53;
     border-radius: 30px;
@@ -393,8 +393,8 @@ export const Homepagemain = styled.section`
     align-items: center;
 }
 
-button{
-    padding: 0.5rem 4rem;
+.btn{
+    padding: 0.5rem 2rem;
     border-radius: 17px;
     border: none;
  background-color:#007cba;
@@ -403,6 +403,16 @@ button{
 }
 
 
+
+@media screen and (max-width: 800px) {
+
+    .carouselwrappeer{
+        flex-direction: column-reverse;
+        gap: 0rem;
+        width: 100%;
+    }
+
+}
 `
 
 
