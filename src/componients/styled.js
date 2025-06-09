@@ -391,15 +391,44 @@ export const Homepagemain = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .btn{
     padding: 0.5rem 2rem;
-    border-radius: 17px;
+    border-radius: 20px;
     border: none;
  background-color:#007cba;
  color: whitesmoke;
  font-weight: 600;
+}
+
+
+.apply{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0rem;
+}
+
+.btnn{
+       padding: 0.5rem 7rem;
+    border-radius: 30px;
+    border: none;
+ background-color:#007cba;
+ color: whitesmoke;
+ font-weight: 600; 
+}
+
+
+.loanwraper{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
 }
 
 

@@ -4,6 +4,8 @@ import {Homepagemain} from './styled'
 import One from '../assets/carousel/One.webp'
 import Two from '../assets/carousel/Two.webp'
 import Three from '../assets/carousel/Three.webp'
+import { BsCashCoin } from "react-icons/bs";
+import { FaCarAlt } from "react-icons/fa";
 // import Four from '../assets/carousel/Four.webp'
 // import five from '../assets/carousel/five.webp'
 
@@ -33,12 +35,6 @@ const Homepage = () => {
             <div className="carousel-item">
               <img src={Three} className="d-block w-100" alt="Three" />
             </div>
-            <div className="carousel-item">
-              <img src={Four} className="d-block w-100" alt="Four" />
-            </div>
-            <div className="carousel-item">
-              <img src={five} className="d-block w-100" alt="five" />
-            </div>
           </div>
         </div> */}
 
@@ -62,6 +58,55 @@ const Homepage = () => {
     </div>
 
       </div>
+      </div>
+
+
+      <div className="apply">
+        <button className='btnn'><Link style={{textDecoration: 'none', color: 'whitesmoke'}}>Become a Member</Link></button>
+        <button className='btnn'>Apply for a Loan</button>
+        <button className='btnn'>Make a Payment</button>
+      </div>
+
+
+
+      <div className="loanwraper">
+        <div style={{display: 'flex', justifyContent:'center', alignItems: 'center', flexDirection:'column'}}>
+          <BsCashCoin />
+          <h5>Personal Loans</h5>
+          <span>High debt?</span>
+          <span>Consolidate now.</span>
+ 
+          <span>As low as</span>
+          <p>9.99%</p>
+          <Link>Apply Now</Link>
+        </div>
+        <div style={{display: 'flex', justifyContent:'center', alignItems: 'center', flexDirection:'column'}}>
+          <FaCarAlt />
+          <h5>Auto Loans</h5>
+          <span>Upgrade your ride,</span>
+          <span>lower your rate.</span>
+          <span>As low as</span>
+          <p>4.99%</p>
+          <Link>Get Started</Link>
+        </div>
+        <div style={{display: 'flex', justifyContent:'center', alignItems: 'center', flexDirection:'column'}}>
+          <FaCarAlt />
+          <h5>Auto Loans</h5>
+          <span>Upgrade your ride,</span>
+          <span>lower your rate.</span>
+          <span>As low as</span>
+          <p>4.99%</p>
+          <Link>Get Started</Link>
+        </div>
+        <div style={{display: 'flex', justifyContent:'center', alignItems: 'center', flexDirection:'column'}}>
+          <FaCarAlt />
+          <h5>Auto Loans</h5>
+          <span>Upgrade your ride,</span>
+          <span>lower your rate.</span>
+          <span>As low as</span>
+          <p>4.99%</p>
+          <Link>Get Started</Link>
+        </div>
       </div>
 
       </Homepagemain>
