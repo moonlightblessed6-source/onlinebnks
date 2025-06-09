@@ -26,6 +26,7 @@ export const Navbar = styled.nav`
 
 .leftLogo{
     /* width: 70px; */
+    vertical-align: middle;
 }
 
 img{
@@ -360,6 +361,57 @@ align-items: center;
 }
 
 `
+
+
+
+export const Homepagemain = styled.section`
+
+.carouselwrappeer{
+    width: 90%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.securelogin{
+ border: 3px solid #fdd756;
+ width: 500px;
+ background-color: whitesmoke;
+ padding: 1rem;
+ border-radius: 20px;
+ color: #007cba;
+ font-weight: 900;
+}
+
+.loginform{
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    padding: 0.5rem 4rem;
+    border-radius: 17px;
+    border: none;
+ background-color:#007cba;
+ color: whitesmoke;
+ font-weight: 600;
+}
+
+
+`
+
+
+
+
+
+
+
+
 
 
 

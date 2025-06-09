@@ -10,7 +10,7 @@ const Nav = () => {
           <div className="bottonline">
         <div className="navwrapper">
          <div className="leftLogo">
-          <p>Routing number 267080355</p>
+          <span>Routing number 267080355</span>
          </div>
           <div className="rightItems">
              <div className="atag">

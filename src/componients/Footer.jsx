@@ -8,8 +8,9 @@ const Footer = () => {
       <div className="footerwrapper">
         <div className="temss">
           <div>
-            <h3>About</h3>
+            
             <ul>
+              <h5>About</h5>
                 <li>Our Company</li>
                 <li>Social Impact</li>
                 <li>Careers</li>
@@ -20,8 +21,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3>Business Solutions</h3>
+     
             <ul>
+              <h5>Business Solutions</h5>
                 <li>Corporate Finance</li>
                 <li>Dealer Services</li>
                 <li>Ally Ventures</li>
@@ -29,8 +31,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3>Learn</h3>
             <ul>
+               <h5>Learn</h5>
                 <li>Conversationally</li>
                 <li>Financial Education Programs</li>
                 <li>Mortgage Assistance</li>
@@ -38,8 +40,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3>Resources</h3>
+
             <ul>
+                <h5>Resources</h5>
                 <li><Link>Contact</Link></li>
                 <li>Give Feedback</li>
                 <li>ATM Locator</li>
@@ -50,8 +53,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <p>Terms & Privacy</p>
+
             <ul>
+              <h5>Terms & Privacy</h5>
                 <li>Ally Invest Disclosures</li>
                 <li>Legal</li>
                 <li>Privacy</li>
