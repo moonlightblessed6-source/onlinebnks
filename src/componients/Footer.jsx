@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             
             <ul>
-              <h5>About</h5>
+              <h5><strong>About</strong></h5>
                 <li>Our Company</li>
                 <li>Social Impact</li>
                 <li>Careers</li>
@@ -23,7 +23,7 @@ const Footer = () => {
           <div>
      
             <ul>
-              <h5>Business Solutions</h5>
+              <h5><strong>Business Solutions</strong></h5>
                 <li>Corporate Finance</li>
                 <li>Dealer Services</li>
                 <li>Ally Ventures</li>
@@ -32,7 +32,7 @@ const Footer = () => {
 
           <div>
             <ul>
-               <h5>Learn</h5>
+               <h5><strong>Learn</strong></h5>
                 <li>Conversationally</li>
                 <li>Financial Education Programs</li>
                 <li>Mortgage Assistance</li>
@@ -42,7 +42,7 @@ const Footer = () => {
           <div>
 
             <ul>
-                <h5>Resources</h5>
+                <h5><strong>Resources</strong></h5>
                 <li><Link>Contact</Link></li>
                 <li>Give Feedback</li>
                 <li>ATM Locator</li>
@@ -55,7 +55,7 @@ const Footer = () => {
           <div>
 
             <ul>
-              <h5>Terms & Privacy</h5>
+              <h5><strong>Terms & Privacy</strong></h5>
                 <li>Ally Invest Disclosures</li>
                 <li>Legal</li>
                 <li>Privacy</li>

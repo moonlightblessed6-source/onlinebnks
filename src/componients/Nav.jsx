@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from '../assets/logo/js_logo_placeholder.svg'
 import {Navbar} from './styled'
+import { TiThMenu } from "react-icons/ti";
+
 
 const Nav = () => {
     return(
@@ -29,6 +31,7 @@ const Nav = () => {
            <div className="bottonwrapper">
             
           <div className="downnav">
+            <div className="menuw"><TiThMenu style={{fontSize: '30px', color: 'black'}} /></div>
             <div className="left"><img src={logo} alt="logo" /></div>
 
             <div className="right">

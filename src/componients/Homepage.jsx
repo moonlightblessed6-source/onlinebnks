@@ -5,7 +5,10 @@ import One from '../assets/carousel/One.webp'
 import Two from '../assets/carousel/Two.webp'
 import Three from '../assets/carousel/Three.webp'
 import { BsCashCoin } from "react-icons/bs";
-import { FaCarAlt } from "react-icons/fa";
+import { FaCarAlt, FaLaptopHouse} from "react-icons/fa";
+import { FiCreditCard } from "react-icons/fi";
+
+
 // import Four from '../assets/carousel/Four.webp'
 // import five from '../assets/carousel/five.webp'
 
@@ -62,7 +65,7 @@ const Homepage = () => {
 
 
       <div className="apply">
-        <button className='btnn'><Link style={{textDecoration: 'none', color: 'whitesmoke'}}>Become a Member</Link></button>
+        <button className='btnn'>Become a Member</button>
         <button className='btnn'>Apply for a Loan</button>
         <button className='btnn'>Make a Payment</button>
       </div>
@@ -71,7 +74,7 @@ const Homepage = () => {
 
       <div className="loanwraper">
         <div style={{display: 'flex', justifyContent:'center', alignItems: 'center', flexDirection:'column'}}>
-          <BsCashCoin />
+          <BsCashCoin style={{ color: '#007cba', fontSize: '30px'}} />
           <h5>Personal Loans</h5>
           <span>High debt?</span>
           <span>Consolidate now.</span>
@@ -81,7 +84,7 @@ const Homepage = () => {
           <Link>Apply Now</Link>
         </div>
         <div style={{display: 'flex', justifyContent:'center', alignItems: 'center', flexDirection:'column'}}>
-          <FaCarAlt />
+          <FaCarAlt style={{ color: '#007cba', fontSize: '30px'}} />
           <h5>Auto Loans</h5>
           <span>Upgrade your ride,</span>
           <span>lower your rate.</span>
@@ -90,24 +93,44 @@ const Homepage = () => {
           <Link>Get Started</Link>
         </div>
         <div style={{display: 'flex', justifyContent:'center', alignItems: 'center', flexDirection:'column'}}>
-          <FaCarAlt />
-          <h5>Auto Loans</h5>
-          <span>Upgrade your ride,</span>
-          <span>lower your rate.</span>
+          <FaLaptopHouse style={{ color: '#007cba', fontSize: '30px'}}/>
+          <h5>HELOC</h5>
+          <span>Need cash?</span>
+          <span>Use your equity.</span>
           <span>As low as</span>
-          <p>4.99%</p>
-          <Link>Get Started</Link>
+          <p>2.99%</p>
+          <Link>Learn more</Link>
         </div>
         <div style={{display: 'flex', justifyContent:'center', alignItems: 'center', flexDirection:'column'}}>
-          <FaCarAlt />
-          <h5>Auto Loans</h5>
-          <span>Upgrade your ride,</span>
-          <span>lower your rate.</span>
+         <FiCreditCard  style={{color: '#007cba', fontSize: '30px'}}/>
+          <h5>Credit Cards</h5>
+          <span>High rates?</span>
+          <span>Save with ours.</span>
           <span>As low as</span>
-          <p>4.99%</p>
-          <Link>Get Started</Link>
+          <p>13.15%</p>
+          <Link>Apply now</Link>
         </div>
       </div>
+
+
+      <div className="Bankings">
+        <h5><strong>Banking That Puts You First</strong></h5>
+        <div className="Bankingwrapprs">
+          <h6>Join <strong>JetStream FCU</strong>, a trusted financial partner with <strong>75 years of experience</strong> and <strong>$238M in assets</strong>. Whether you live, work, worship, or study in <strong>Miami-Dade or Puerto Rico</strong>, you’re <strong>eligible to join!</strong></h6>
+          <ul>
+            <li><strong>FREE</strong> State-of-the-Art Online Banking</li>
+            <li><strong>FREE</strong> Checking & Membership Savings</li>
+            <li><strong>Market-Leading Rates</strong></li>
+            <li><strong>100,000+ FEE-FREE ATMs & Branches</strong></li>
+           
+          </ul>
+          <h6>Bank smarter. Live better.</h6>
+          <button className='btn' style={{marginBottom: '2rem'}}><Link style={{color: 'whitesmoke', textDecoration: 'none'}}>Join Today!</Link></button>
+        </div>
+      </div>
+
+
+   
 
       </Homepagemain>
   

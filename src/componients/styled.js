@@ -8,6 +8,10 @@ export const Navbar = styled.nav`
   font-size: 15px;
   color: whitesmoke;
 
+  .menuw{
+    display: none;
+  }
+
   .bottonline{
     border-bottom: 1px solid #007cba;
     padding: 0.3rem 0rem;
@@ -91,6 +95,27 @@ button:hover{
     gap: 1rem;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width: 800px){
+    .bottonline{
+        display: none;
+    }
+
+    .right{
+        display: none;
+    }
+    .menuw{
+        display: block;
+    }
+
+    .left{
+        width: 50%;
+    }
+
+    img{
+        width: 100%;
+    }
 }
 `
 
@@ -365,6 +390,7 @@ align-items: center;
 
 
 export const Homepagemain = styled.section`
+ font-family: "Lato", sans-serif;
 
 .carouselwrappeer{
     width: 90%;
@@ -429,6 +455,61 @@ export const Homepagemain = styled.section`
     margin: auto;
     align-items: center;
     justify-content: space-between;
+    margin-block: 2rem;
+}
+
+.loanwraper>div{
+    border: 1px solid lightgray;
+    width: 100%;
+    padding: 2rem 1rem;
+}
+
+h5{
+    color: #007cba;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+p{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+a:hover{
+ color: #fdd756;
+}
+
+
+.Bankings{
+  margin-block: 2rem;
+  border-bottom: 1px solid lightgray;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+h5{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 2rem;
+}
+h6{
+    text-align: center;
+    margin-block: 1rem;
+    font-size: 18px;
+}
+.Bankingwrapprs{
+    border-top: 1px solid lightgray;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -440,6 +521,36 @@ export const Homepagemain = styled.section`
         gap: 0rem;
         width: 100%;
     }
+
+    .apply{
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+    button{
+        font-size: 14px;
+    }
+
+    .loanwraper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    h5{
+        width: 90%;
+        margin: auto;
+        font-size: 23px;
+    }
+
+    ul{
+         font-family: "Lato", sans-serif;
+    }
+
 
 }
 `
