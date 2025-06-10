@@ -516,6 +516,11 @@ h6{
 
 @media screen and (max-width: 800px) {
 
+    .securelogin{
+        width: 90%;
+        margin-block:1rem;
+    }
+
     .carouselwrappeer{
         flex-direction: column-reverse;
         gap: 0rem;
