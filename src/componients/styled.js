@@ -575,6 +575,7 @@ image{
         display: flex;
         flex-direction: column;
         width: 90%;
+           border: none;
     }
 
     .EasyVestwraper>div{
@@ -617,11 +618,19 @@ export const Footers = styled.footer`
  font-family: "Lato", sans-serif;
   font-size: 15px;
 
+
+  .footerwrapper{
+background-color: #007cba;
+color: whitesmoke;
+padding: 2rem;
+  }
+
 .temss{
     display: flex;
     justify-content: space-between;
     width: 90%;
     margin: auto;
+      
 }
 
 p{
@@ -654,7 +663,10 @@ margin-bottom: 2rem;
 .bottonlast{
     width: 90%;
     margin: auto;
-    margin-block:1rem;
+    /* margin-block:1rem; */
+    background-color: #007cba;
+color: whitesmoke;
+
 }
 
 @media screen and (max-width: 1000px) {
