@@ -97,7 +97,7 @@ button:hover{
     justify-content: center;
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1000px){
     .bottonline{
         display: none;
     }
@@ -293,7 +293,7 @@ img{
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .flex {
         display: flex;
         flex-direction: column;
@@ -529,7 +529,7 @@ image{
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
 
     .securelogin{
         width: 90%;
@@ -657,7 +657,7 @@ margin-bottom: 2rem;
     margin-block:1rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
    .temss{
     flex-direction: column;
     display: flex;
