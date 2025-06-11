@@ -7,6 +7,7 @@ import Three from '../assets/carousel/Three.webp'
 import { BsCashCoin } from "react-icons/bs";
 import { FaCarAlt, FaLaptopHouse} from "react-icons/fa";
 import { FiCreditCard } from "react-icons/fi";
+import easyvex from '../assets/homepage/easyvest-your_choice-da6a93e9.webp'
 
 
 // import Four from '../assets/carousel/Four.webp'
@@ -127,6 +128,29 @@ const Homepage = () => {
           <h6>Bank smarter. Live better.</h6>
           <button className='btn' style={{marginBottom: '2rem'}}><Link style={{color: 'whitesmoke', textDecoration: 'none'}}>Join Today!</Link></button>
         </div>
+      </div>
+
+
+      <div className="EasyVest">
+       <h1 style={{width: '90%', margin: 'auto', fontSize: '30px'}}>EasyVest Investment Options:</h1>
+       <div className="EasyVestwraper">
+        <div ><img src={easyvex} alt="easyvex" style={{width: '530px', borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px'}} /></div>
+
+        <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', justifyContent: 'center'}}>
+          <h3 style={{fontSize: '25px'}}>EasyVest Automated Digital Advisor</h3>
+          <h4>Effortless Investing for Your Future: Invest, Grow, Achieve – All in One User-Friendly Platform</h4>
+          <h4>Start with just $200. Let EasyVest’s automated advisor create a personalized investment strategy for you, analyzing live market data to optimize your portfolio automatically.</h4>
+
+          <ul>
+            <li>Personalized Portfolio Strategy: Answer a few questions, and EasyVest instantly builds a diversified portfolio tailored to your goals.</li>
+            <li>Effortless Automated Investing: EasyVest constantly monitors and adjusts your portfolio, keeping it aligned with your financial objectives.</li>
+            <li>Start with Just $200: Add funds at any time, or set up recurring transfers from your JetStream FCU account.</li>
+            <li>Low-cost Exchange Traded Funds (ETFs)</li>
+            <li>Easily move securities from your other brokerage accounts into EasyVest</li>
+          </ul>
+        </div>
+       </div>
+
       </div>
 
 

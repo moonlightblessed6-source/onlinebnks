@@ -482,7 +482,7 @@ a:hover{
 
 .Bankings{
   margin-block: 2rem;
-  border-bottom: 1px solid lightgray;
+
 }
 
 ul{
@@ -512,6 +512,21 @@ h6{
     align-items: center;
 }
 
+.EasyVest{
+ margin-block: 3rem;
+}
+.EasyVestwraper{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    gap: 2rem;
+    border: 2px solid  #fdd756;
+   border-radius: 11px;
+   margin-top: 1rem;
+}
+image{
+   width: 1000px;
+}
 
 
 @media screen and (max-width: 800px) {
@@ -555,6 +570,31 @@ h6{
     ul{
          font-family: "Lato", sans-serif;
     }
+
+    .EasyVestwraper{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .EasyVestwraper>div{
+        width: 100%;
+    }
+    .EasyVestwraper > div > img {
+  width: 100% !important;
+  border-top-left-radius: 10px!important;
+  border-top-right-radius: 10px!important;
+  border-bottom-left-radius: 0px !important;
+
+}
+
+.EasyVest>h1{
+    font-size: 21px !important;
+}
+
+ h4, h3{
+    font-size: 19px !important;
+}
 
 
 }
