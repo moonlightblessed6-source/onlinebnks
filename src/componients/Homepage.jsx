@@ -8,7 +8,10 @@ import { BsCashCoin } from "react-icons/bs";
 import { FaCarAlt, FaLaptopHouse} from "react-icons/fa";
 import { FiCreditCard } from "react-icons/fi";
 import easyvex from '../assets/homepage/easyvest-your_choice-da6a93e9.webp'
-
+import Explained from '../assets/homepage/HELOC-Explained-9b5530db.webp'
+import Chataing from '../assets/homepage/Luis-Chataing-8d780b77.webp'
+import jean from '../assets/homepage/Jeanne-Kucey-1cc4893a.webp'
+import kristi from '../assets/homepage/kristi-9c94ba5d.webp'
 
 // import Four from '../assets/carousel/Four.webp'
 // import five from '../assets/carousel/five.webp'
@@ -129,6 +132,50 @@ const Homepage = () => {
           <button className='btn' style={{marginBottom: '2rem'}}><Link style={{color: 'whitesmoke', textDecoration: 'none'}}>Join Today!</Link></button>
         </div>
       </div>
+
+
+<div className="tools">
+  <h1 style={{margin: 'auto', width: '90%', fontSize: '25px'}}>Tools to Power Your Growth</h1>
+  <div className="toolswrpper">
+    <div className='wrap'>
+      <div className='imgdiv'><img src={Explained} alt="Explained" style={{width: '100%', height: '400px', borderTopLeftRadius: '20px', borderBottomLeftRadius: '20px'}} /></div>
+        <div className='wrote'>
+        <h4 style={{color: '#007cba'}}>HELOC Explained:</h4>
+        <h4>When NOT to use it!</h4>
+        <h4>JetStream explains when a HELOC may not be the best financial choice.</h4>
+        </div>
+      </div>
+
+    <div className='wrap'>
+      <div className='imgdiv'><img src={Chataing} alt="Chataing" style={{width: '100%', height: '400px', borderTopLeftRadius: '20px', borderBottomLeftRadius: '20px'}} /></div>
+        <div className='wrote'>
+        <h4 style={{color: '#007cba'}}>Aclarando dudas con Luis Chataing.</h4>
+        <h4>Podcast.</h4>
+        <h4>Luis Chataing ofrece consejos financieros con humor, respondiendo preguntas frecuentes y brindando recomendaciones</h4>
+        </div>
+      </div>
+
+    <div className='wrap'>
+      <div className='imgdiv'><img src={jean} alt="Explained" style={{width: '100%', height: '400px', borderTopLeftRadius: '20px', borderBottomLeftRadius: '20px'}} /></div>
+        <div className='wrote'>
+        <h4 style={{color: '#007cba'}}>CEO Jeanne Kucey's Surprise:</h4>
+        {/* <h4>When NOT to use it!</h4> */}
+        <h4>Jetstream FCU's 75th Anniversary & Home Help Rehab Loan Launch!</h4>
+        </div>
+      </div>
+
+    <div className='wrap'>
+      <div className='imgdiv'><img src={kristi} alt="Explained" style={{width: '100%', height: '400px', borderTopLeftRadius: '20px', borderBottomLeftRadius: '20px'}} /></div>
+        <div className='wrote'>
+        <h4 style={{color: '#007cba'}}>Making a Difference:</h4>
+        <h4>How JetStream Supports Kristi House</h4>
+        <h4>JetStream proudly partners with Kristi House to support families and children affected by abuse.</h4>
+        </div>
+      </div>
+
+
+  </div>
+</div>
 
 
       <div className="EasyVest">
