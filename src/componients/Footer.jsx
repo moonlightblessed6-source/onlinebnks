@@ -1,6 +1,9 @@
 import React from 'react'
 import {Footers} from './styled'
 import { Link } from 'react-router-dom'
+import ncua from '../assets/logo/NCUA-logo-3604605f.webp'
+import cdfi from '../assets/logo/cdfi_logo_bw-3a2d14f8.webp'
+import fheo from '../assets/logo/fheo300-b3cc96a5.webp'
 
 const Footer = () => {
   return (
@@ -67,6 +70,14 @@ const Footer = () => {
         <hr />
         <div className="bottonlast">
             <p>©2009-2025 JETSTREAM Financial Inc.</p>
+        </div>
+        <div className="wedobsiness">
+          <img src={cdfi} alt="cdfi" />
+          <img src={fheo} alt="fheo" />
+          <img src={ncua} alt="ncua" />
+        </div>
+        <div>
+          <p className='mrp'>We do business in accordance with the Federal Fair Housing Law and Equal Credit Opportunity Act.</p>
         </div>
       </div>
     </Footers>

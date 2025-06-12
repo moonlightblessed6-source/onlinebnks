@@ -738,6 +738,20 @@ color: whitesmoke;
 
 }
 
+.wedobsiness{
+    display: flex;
+    gap: 1rem;
+    width: 90%;
+    margin: auto;
+    justify-content: end;
+}
+
+.mrp{
+    width: 90%;
+    margin: auto;  
+    text-align: end;
+}
+
 @media screen and (max-width: 1000px) {
    .temss{
     flex-direction: column;
