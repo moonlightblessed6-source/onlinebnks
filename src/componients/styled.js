@@ -157,7 +157,7 @@ margin: auto;
 }
 
 .buttom{
- background-color:#300942 ;
+ background-color: #007cba;
  padding: 3rem 0rem;
 
 }
@@ -183,7 +183,7 @@ padding: 1rem 0rem;
 
 
 .Social{
-    background-color: #300942 ;
+    background-color: #007cba; ;
     color: whitesmoke;
     padding: 3rem 0rem;
 }
@@ -251,7 +251,7 @@ padding: 1rem 0rem;
 }
 
 .Investors{
-background-color: #650360;
+background-color: #007cba;;
 padding: 3rem 0rem;
 color: whitesmoke;
 display: flex;

@@ -75,7 +75,7 @@ const About = () => {
          <div className="careswrapper">
           <div className='imgimage'><img src={cares} alt="cares" /></div>
         <div className="Careerss">
-            <h4>Careers at Ally</h4>
+            <h4>Careers at JETSTREAM</h4>
             <p>Come for the opportunity and grow from the experience.</p>
             <p>Our teammates are committed to developing award-winning technology services and products that make your life easier. They are diverse thinkers that create new ideas and encourage innovation.</p>
             <Link>Find out how we’re building together</Link>
@@ -106,20 +106,20 @@ const About = () => {
 
     <div className="FEWTHINGS">
     <h3>A FEW THINGS YOU SHOULD KNOW</h3>
-    <p>Ally Financial Inc. (NYSE: ALLY) is a leading digital financial services company, NMLS ID 3015 . Ally Bank, the company's direct banking subsidiary, offers an array of deposit products and services. Ally Bank is a Member FDIC and Equal Housing Lender   , NMLS ID 181005 . Credit products are subject to approval and additional terms and conditions apply. Programs, rates and terms and conditions are subject to change at any time without notice.</p>
-    <p>Ally Servicing LLC, NMLS ID 212403  is an affiliate of Ally Financial Inc.</p>
+    <p>JETSTREAM Financial Inc. (NYSE: JETSTREAM) is a leading digital financial services company, NMLS ID 3015 . JETSTREAM Bank, the company's direct banking subsidiary, offers an array of deposit products and services. JETSTREAM Bank is a Member FDIC and Equal Housing Lender   , NMLS ID 181005 . Credit products are subject to approval and additional terms and conditions apply. Programs, rates and terms and conditions are subject to change at any time without notice.</p>
+    <p>JETSTREAM Servicing LLC, NMLS ID 212403  is an affiliate of JETSTREAM Financial Inc.</p>
     <p>Options involve risk and are not suitable for all investors. Review the Characteristics and Risks of Standardized Options brochure   before you begin trading options. Options investors may lose the entire amount of their investment or more in a relatively short period of time. </p>
     <p>Trading on margin involves risk. You can lose more funds than you deposit in a margin account. Please review Margin Account Agreement and Disclosure  for more information regarding margin trading.</p>
-    <p>Securities products and services are offered through Ally Invest Securities LLC, member FINRA / SIPC . For background on Ally Invest Securities go to FINRA’s BrokerCheck .  Advisory services offered through Ally Invest Advisors Inc., a registered investment adviser.  View Invest Disclosures . Ally Invest Advisors and Ally Invest Securities  are wholly owned subsidiaries of Ally Financial Inc.  Securities products are NOT FDIC INSURED, NOT BANK GUARANTEED, and MAY LOSE VALUE. </p>
-    <p>Before you invest, you should carefully review and consider the investment objectives, risks, charges, and expenses of any mutual fund or exchange-traded fund (ETF) you are considering. ETF trading prices may not necessarily reflect the net asset value of the underlying securities. A mutual fund/ETF prospectus contains this and other information and can be obtained by emailing support@invest.ally.com .</p>
+    <p>Securities products and services are offered through JETSTREAM Invest Securities LLC, member FINRA / SIPC . For background on JETSTREAM Invest Securities go to FINRA’s BrokerCheck .  Advisory services offered through JETSTREAM Invest Advisors Inc., a registered investment adviser.  View Invest Disclosures . JETSTREAM Invest Advisors and JETSTREAM Invest Securities  are wholly owned subsidiaries of JETSTREAM Financial Inc.  Securities products are NOT FDIC INSURED, NOT BANK GUARANTEED, and MAY LOSE VALUE. </p>
+    <p>Before you invest, you should carefully review and consider the investment objectives, risks, charges, and expenses of any mutual fund or exchange-traded fund (ETF) you are considering. ETF trading prices may not necessarily reflect the net asset value of the underlying securities. A mutual fund/ETF prospectus contains this and other information and can be obtained by emailing support@invest.JETSTREAM.com .</p>
     <p>Ladder Insurance Services, LLC (CA license # OK22568; AR license # 3000140372) offers term life insurance products issued by multiple insurers. For details go to ladderlife.com . All insurance product terms are set and governed by the individual insurance policy. Each insurer has financial responsibility for its own products. </p>
-    <p>Ally credit cards are issued by Ally Bank, Member FDIC. Mastercard and the circles design are registered trademarks, and Mastercard ID Theft Protection is a trademark, of Mastercard International Incorporated. ©2025 Mastercard. All rights reserved. Certain terms, conditions, and exclusions apply. Cardholders need to register for this service. This service is provided by Iris® Powered by Generali.</p>
+    <p>JETSTREAM credit cards are issued by JETSTREAM Bank, Member FDIC. Mastercard and the circles design are registered trademarks, and Mastercard ID Theft Protection is a trademark, of Mastercard International Incorporated. ©2025 Mastercard. All rights reserved. Certain terms, conditions, and exclusions apply. Cardholders need to register for this service. This service is provided by Iris® Powered by Generali.</p>
     <p>FICO® is a registered trademark of the Fair Isaac Corporation in the United States and other countries.</p>
-    <p>Ally and Do It Right are registered service marks of Ally Financial Inc.</p>
+    <p>JETSTREAM and Do It Right are registered service marks of JETSTREAM Financial Inc.</p>
     <p>App Store is a service mark of Apple Inc. Google Play is a trademark of Google Inc. </p>
     <p>Zelle and the Zelle related marks are wholly owned by Early Warning Services, LLC and are used herein under license.</p>
     <p>From NerdWallet. © 2017-2025 and TM, NerdWallet, Inc. All rights reserved. </p>
-    <p>From Fortune. ©2025 Fortune Media IP Limited. All rights reserved. FORTUNE and Fortune 100 Best Companies to Work For® are registered trademarks of Fortune Media IP Limited and are used under license. FORTUNE and Fortune Media IP Limited are not affiliated with, and do not endorse products or services of Ally Financial.  </p>
+    <p>From Fortune. ©2025 Fortune Media IP Limited. All rights reserved. FORTUNE and Fortune 100 Best Companies to Work For® are registered trademarks of Fortune Media IP Limited and are used under license. FORTUNE and Fortune Media IP Limited are not affiliated with, and do not endorse products or services of JETSTREAM Financial.  </p>
     <p>PEOPLE’s Companies That Care Logo® is a registered trademark of TI Gotham, Inc., a Dotdash Meredith company. Used under license.</p>
     </div>
 

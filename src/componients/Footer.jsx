@@ -47,7 +47,7 @@ const Footer = () => {
                 <li>Give Feedback</li>
                 <li>ATM Locator</li>
                 <li>Site Map</li>
-                <li>Shop Ally Gear</li>
+                <li>Shop JETSTREAM Gear</li>
                 <li>Accessibility</li>
             </ul>
           </div>
@@ -56,7 +56,7 @@ const Footer = () => {
 
             <ul>
               <h5><strong>Terms & Privacy</strong></h5>
-                <li>Ally Invest Disclosures</li>
+                <li>JETSTREAM Invest Disclosures</li>
                 <li>Legal</li>
                 <li>Privacy</li>
                 <li>Security</li>
@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
         <hr />
         <div className="bottonlast">
-            <p>©2009-2025 Ally Financial Inc.</p>
+            <p>©2009-2025 JETSTREAM Financial Inc.</p>
         </div>
       </div>
     </Footers>
