@@ -676,6 +676,316 @@ image{
 
 
 
+export const Accountpage = styled.main`
+font-family: "Lato", sans-serif;
+background-color: #eff7ff;
+
+.accounwrapper{
+    width: 80%;
+    border: 1px solid #eff7ff;
+    margin: auto;
+    
+}
+
+.accountname>span{
+    margin-top: 2rem;
+
+}
+
+.accountname{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.AcctInsured{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 3rem 2rem;
+    gap: 1rem;
+    border-left: 2px solid #007cba;
+    box-shadow: 2px 2px 4px;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.AcctInsured>div>h1{
+    font-size: 21px;
+    
+}
+.AcctInsured>div>p{
+    font-size: 16px;
+}
+
+.checking{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 2px 2px 4px;
+     border: 1px solid #007cba;
+    justify-content: start;
+    align-items: start;
+}
+
+button{
+    border: none;
+    background-color: #007cba;
+    padding: 0.3rem 1rem;
+    color: whitesmoke;
+    border-radius: 30px;
+
+}
+.checking>span{
+    font-size: 17px;
+}
+
+
+.cds{
+    display: flex;
+    margin-top: 3rem;
+    gap: 1rem;
+    justify-content: space-evenly;
+    box-sizing: 2px 2px 4px;
+}
+
+.cds>div{
+    padding: 1rem;
+    background-color: white;
+    flex: 1;
+    
+
+}
+
+
+.cds>div>p{
+    font-size: 18px;
+}
+
+.botton{
+    font-size: 13px;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .accounwrapper {
+    width: 95%;
+    margin: auto;
+  }
+
+  .accountname {
+    gap: 0.5rem;
+
+  }
+
+  .accountname > span {
+    margin-top: 1rem;
+  }
+
+  .bar{
+    display: none;
+  }
+
+  .AcctInsured {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .AcctInsured > div > h1 {
+    font-size: 18px;
+  }
+
+  .AcctInsured > div > p {
+    font-size: 14px;
+  }
+
+  .checking {
+    padding: 1rem;
+  }
+
+  .checking > span {
+    font-size: 16px;
+  }
+
+  .cds {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cds > div {
+    width: 100%;
+  }
+
+  .cds > div > p {
+    font-size: 16px;
+  }
+
+  .botton {
+    margin-top: 4rem;
+    font-size: 12px;
+  }
+}
+
+
+`
+
+
+
+
+
+export const AccountProfile = styled.main`
+font-family: "Lato", sans-serif;
+background-color: #eff7ff;
+
+ .profilewrapper{
+  border: 0.2px solid #eff7ff;
+    
+ }
+
+.AcctInsured{
+    margin: 3rem auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 2rem 0rem;
+    gap: 1rem;
+    border-left: 2px solid #007cba;
+    box-shadow: 2px 2px 4px;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+h1{
+ font-size: 20px;
+ text-align: center;
+}
+.basicinfo>span{
+    display: flex;
+    justify-content: center;
+}
+
+.basicinfo{
+background-color: #e5ecf4;
+padding: 0.4rem 0rem;
+
+
+}
+
+.table{
+    width: 40%;
+    margin: auto;
+    margin-block: 1rem;
+}
+
+.table>div{
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    margin-block: 1rem;
+    justify-content: space-between;
+}
+button{
+    width: 100%;
+    padding: 0.4rem 2rem;
+    border: 1px solid #007cba;;
+    background-color: #007cba;
+    color: whitesmoke;
+}
+
+.bottonwrite{
+    width: 90%;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.bottonwrite> p, span{
+    font-size: 13px;
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+
+  .AcctInsured {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+  }
+  .bar{
+    display: none;
+  }
+
+   .table {
+    width: 90%;
+    margin: auto;
+    margin-block: 1rem;
+  }
+
+  .table > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 14px;
+  }
+
+  .bottonwrite {
+    width: 95%;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .bottonwrite > p,
+  .bottonwrite > span {
+    font-size: 12px;
+  }
+
+}
+
+
+
+
+`
+
+
+
+export const Accountnavbar = styled.main`
+padding: 1rem 2rem;
+
+
+.left{
+    width: 100%;
+}
+
+.left>img{
+    width: 300px;
+}
+
+.accountNavWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+
+}
+
+`
+
+
+
+
 
 
 
@@ -744,6 +1054,7 @@ color: whitesmoke;
     width: 90%;
     margin: auto;
     justify-content: end;
+    margin-top: 2rem;
 }
 
 .mrp{

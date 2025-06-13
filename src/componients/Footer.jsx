@@ -71,7 +71,9 @@ const Footer = () => {
         <div className="bottonlast">
             <p>©2009-2025 JETSTREAM Financial Inc.</p>
         </div>
-        <div className="wedobsiness">
+      </div>
+
+         <div className="wedobsiness">
           <img src={cdfi} alt="cdfi" />
           <img src={fheo} alt="fheo" />
           <img src={ncua} alt="ncua" />
@@ -79,7 +81,6 @@ const Footer = () => {
         <div>
           <p className='mrp'>We do business in accordance with the Federal Fair Housing Law and Equal Credit Opportunity Act.</p>
         </div>
-      </div>
     </Footers>
   )
 }

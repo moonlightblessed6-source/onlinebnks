@@ -5,23 +5,46 @@ import Footer from './componients/Footer'
 import About from './componients/About'
 import Homepage from './componients/Homepage'
 import ContactUs from './componients/contact'
+import { useLocation } from 'react-router-dom'
+import Account from './componients/Account'
+import ProtectedRoute from './componients/ProtectedRoute'
+import AccountProfile from './componients/Profile'
+import AccountNav from './componients/accountNav'
+
+// import AccountSettings from './componients/AccountSettings' // if you have it
+// import AccountNav from './componients/AccountNav' // new or existing account nav
 
 
 function App() {
 
+const location = useLocation()
+const shouldShowFooter = !location.pathname.startsWith('/account')
+
+const showAccountNav = location.pathname.startsWith('/account')
+
+
 
   return (
      <>
-      <Nav />
+      {!location.pathname.startsWith('/account') && <Nav />}
+      {showAccountNav && <AccountNav />}
       <Routes>
         <Route path='/' element={<Homepage />}/>
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<ContactUs />} />
+        <Route path='/account' element={<Account /> } />
+        <Route path='/account/profile' element={<AccountProfile /> } />
+        
 
       </Routes>
-      <Footer />
+
+      {shouldShowFooter && <Footer />}
     </>
   )
 }
 
 export default App
+
+
+
+
