@@ -1,11 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React  from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../assets/logo/js_logo_placeholder.svg'
 import {Navbar} from './styled'
 import { TiThMenu } from "react-icons/ti";
 
 
+
+
+
 const Nav = () => {
+
+  const navagate = useNavigate();
+  const isLogin = !!localStorage.getItem('authToken');
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    navagate('/login');
+
+   
+  }
     return(
       // <img src={ally} alt="ally" />
         <Navbar>
@@ -21,7 +34,13 @@ const Nav = () => {
             <Link>Help</Link>
              </div>
             <div className="btn">
-            <button type="submit">Secure Login</button>
+              {isLogin ? (
+              <Link onClick={handleLogout}><button>Logout</button></Link>
+              ):(
+               <Link to='/login'><button>Secure Login</button></Link>
+              )}
+            
+            
             </div>
           </div>
         </div>
@@ -35,10 +54,25 @@ const Nav = () => {
             <div className="left"><img src={logo} alt="logo" /></div>
 
             <div className="right">
-              <Link style={{color: 'black'}}>Personal</Link>
+              {isLogin ? (
+              <div style={{display: 'flex', gap: '16px'}}>
+              <Link to='/' style={{color: 'black'}}>Home</Link>
+              <Link to='/account' style={{color: 'black'}}>Account</Link>
+              <Link to='/account/transfer' style={{color: 'black'}}>Transfer</Link>
+              <Link to='/account/profile' style={{color: 'black'}}>Profile</Link>
+              
+              </div>
+              ):(
+              <div style={{display: 'flex', gap: '16px'}}>
+               <Link style={{color: 'black'}}>Personal</Link>
               <Link style={{color: 'black'}}>Business</Link>
               <Link style={{color: 'black'}}>Resources</Link>
               <Link style={{color: 'black'}}>Insurance</Link>
+              </div>
+              )}
+
+
+
             </div>
           </div>
            </div>

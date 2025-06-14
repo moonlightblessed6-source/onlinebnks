@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {Homepagemain} from './styled'
 import One from '../assets/carousel/One.webp'
 import Two from '../assets/carousel/Two.webp'
@@ -13,10 +13,20 @@ import Chataing from '../assets/homepage/Luis-Chataing-8d780b77.webp'
 import jean from '../assets/homepage/Jeanne-Kucey-1cc4893a.webp'
 import kristi from '../assets/homepage/kristi-9c94ba5d.webp'
 
+
 // import Four from '../assets/carousel/Four.webp'
 // import five from '../assets/carousel/five.webp'
 
 const Homepage = () => {
+
+  const navigate = useNavigate();
+  const isLogin = !!localStorage.getItem('authToken');
+
+
+  const handlelogout = () => {
+    localStorage.removeItem('authToken');
+    navigate('/login')
+  }
   return (
     <Homepagemain>
         <div style={{background: '#007cba'}}>
@@ -25,26 +35,21 @@ const Homepage = () => {
             <h3 style={{textAlign: 'center'}}>Online Banking</h3>
            <hr style={{ borderColor: 'black' }} />
         <div className="loginform">
+          { isLogin  ? (
+          <button className='btn' onClick={handlelogout}>Logout</button>
+          ):(
+         <Link to='/login'> <button className='btn'>Secure Login</button></Link>
+          )}
         
-        <Link> <button className='btn'>Secure Login</button></Link>
+        {isLogin ? (
+       <Link to='/account/transfer' style={{textDecoration: 'none'}}>Transfer</Link>
+        ):(
         <Link>Enroll Now!</Link>
+        )}
+        
+        
         </div>
         </div>
-{/* 
-       <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src={One} className="d-block w-100" alt="One" />
-            </div>
-            <div className="carousel-item">
-              <img src={Two} className="d-block w-100" alt="Two" />
-            </div>
-            <div className="carousel-item">
-              <img src={Three} className="d-block w-100" alt="Three" />
-            </div>
-          </div>
-        </div> */}
-
 
 
         <div id="demo" className="carousel slide" data-bs-ride="carousel" style={{zIndex: '10'}}>
@@ -69,7 +74,11 @@ const Homepage = () => {
 
 
       <div className="apply">
-        <button className='btnn'>Become a Member</button>
+        {isLogin ? (
+        <button className='btnn'>Member Logged In!</button>
+        ):(
+       <button className='btnn'>Become a Member</button>
+        )}
         <button className='btnn'>Apply for a Loan</button>
         <button className='btnn'>Make a Payment</button>
       </div>
@@ -129,7 +138,13 @@ const Homepage = () => {
            
           </ul>
           <h6>Bank smarter. Live better.</h6>
-          <button className='btn' style={{marginBottom: '2rem'}}><Link style={{color: 'whitesmoke', textDecoration: 'none'}}>Join Today!</Link></button>
+          {isLogin ? (
+        <button className='btn' style={{marginBottom: '2rem'}}><Link style={{color: 'whitesmoke', textDecoration: 'none'}}>Logged In!</Link></button>
+          ):(
+        <button className='btn' style={{marginBottom: '2rem'}}><Link style={{color: 'whitesmoke', textDecoration: 'none'}}>Join Today!</Link></button>
+          )}
+          
+          
         </div>
       </div>
 

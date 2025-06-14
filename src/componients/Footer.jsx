@@ -46,7 +46,7 @@ const Footer = () => {
 
             <ul>
                 <h5><strong>Resources</strong></h5>
-                <li><Link style={{color: 'whitesmoke'}}>Contact</Link></li>
+                <li><Link to='/contact' style={{color: 'whitesmoke'}}>Contact</Link></li>
                 <li>Give Feedback</li>
                 <li>ATM Locator</li>
                 <li>Site Map</li>

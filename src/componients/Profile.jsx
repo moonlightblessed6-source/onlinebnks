@@ -1,68 +1,107 @@
-import React from 'react'
-import {AccountProfile} from './styled'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { AccountProfile } from './styled';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+          console.error('No auth token found');
+          return;
+        }
+
+        const response = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
+          headers: { 'Authorization': `Token ${token}` },
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch user data');
+        }
+
+        const data = await response.json();
+        setUserData(data.account);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+  if (!userData) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <AccountProfile>
-        <div className="profilewrapper">
-
+      <div className="profilewrapper">
         <div className="AcctInsured">
-          <div style={{color: '#007cba'}}><h1><strong>FDIC</strong>  </h1></div>
-          <div className='bar'><h1><span>|</span></h1></div>
-          <div><h1><span style={{fontSize: '15px'}}>FDIC-Insured - Backed by the full faith and credit of the U.S. Government. Goldman Sachs Bank USA. Satt Lake City Branch.</span></h1></div>
+          <div style={{ color: '#007cba' }}>
+            <h1>
+              <strong>FDIC</strong>
+            </h1>
+          </div>
+          <div className="bar">
+            <h1>
+              <span>|</span>
+            </h1>
+          </div>
+          <div>
+            <h1>
+              <span style={{ fontSize: '15px' }}>
+                FDIC-Insured - Backed by the full faith and credit of the U.S. Government. Goldman Sachs Bank USA. Salt Lake City Branch.
+              </span>
+            </h1>
+          </div>
         </div>
         <div className="basicinfo">
-            <span>Basic Info</span>
+          <span>Basic Info</span>
         </div>
 
         <div className="table">
-        <div>
-        <p>Name</p>
-        <span>Natanel Stone</span>
-        </div>
-        <div>
-        <p>Email</p>
-        <span>NatanelStone@gmail.com</span>
-        </div>
-        <div>
-        <p>Phone</p>
-        <span>783030838</span>
-        </div>
-        <div>
-        <p>Street</p>
-        <span>ave 43 ny</span>
-        </div>
-        <div>
-        <p>APt/Suite</p>
-        <span>43</span>
-        </div>
-        <div>
-        <p>City</p>
-        <span>NY</span>
-        </div>
-        <div>
-        <p>State</p>
-        <span>New York</span>
-        </div>
-        <div>
-        <p>Zip Code</p>
-        <span>23983</span>
+          <div>
+            <p>Name</p>
+            <span>{`${userData.first_name} ${userData.last_name}`}</span>
+          </div>
+          <div>
+            <p>Email</p>
+            <span>{userData.email}</span>
+          </div>
+          <div>
+            <p>Phone</p>
+            <span>{userData.phone}</span>
+          </div>
+          <div>
+            <p>Street</p>
+            <span>{userData.street}</span>
+          </div>
+          <div>
+            <p>APt/Suite</p>
+            <span>{userData.apt_suite}</span>
+          </div>
+          <div>
+            <p>City</p>
+            <span>{userData.city}</span>
+          </div>
+          <div>
+            <p>State</p>
+            <span>{userData.state}</span>
+          </div>
+          <div>
+            <p>Zip Code</p>
+            <span>{userData.zip_code}</span>
+          </div>
+
+          <button>Edit</button>
         </div>
 
-        <button>Edit</button>
-        </div>
-
-
-     <div className="bottonwrite">
-        <p><strong>Jetstream Credit Union </strong>is a financial institution dedicated to providing loans, deposit products, and credit card services. All financial products and services are offered under the supervision of Jetstream Credit Union. Member FDIC. For more details, including redemption options, go to <span><Link>mygmrewardscard.com</Link></span>. © 2025 Jetstream Credit Union. All rights reserved.</p>
-        <span><strong>NMLS ID:</strong> 208156. NMLS Consumer Access Website: <br /> <span><Link>www.nmlsconsumeraccess.org</Link></span></span>
-     </div>
-
-        </div>
+      </div>
     </AccountProfile>
-  )
-}
+  );
+};
 
-export default Profile
- 
+export default Profile;

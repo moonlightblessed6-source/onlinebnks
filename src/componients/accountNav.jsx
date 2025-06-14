@@ -10,11 +10,11 @@ const AccountNav = () => {
         <div className="left"><img src={logo} alt="logo" /></div>
 
         <div className="rigt">
-            <Link>Home</Link>
-            <Link>Account</Link>
-            <Link>Transfer</Link>
-            <Link>Help</Link>
-            <Link>Profile</Link>
+            <Link to='/'>Home</Link>
+            <Link to='account'>Account</Link>
+            <Link to='/account/transfer'>Transfer</Link>
+            <Link to='/help'>Help</Link>
+            <Link to='/account/profile'>Profile</Link>
         </div>
       </div>
     </Accountnavbar>

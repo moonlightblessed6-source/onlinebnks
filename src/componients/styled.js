@@ -841,6 +841,7 @@ export const AccountProfile = styled.main`
 font-family: "Lato", sans-serif;
 background-color: #eff7ff;
 
+
  .profilewrapper{
   border: 0.2px solid #eff7ff;
     
@@ -870,8 +871,8 @@ h1{
 }
 
 .basicinfo{
-background-color: #e5ecf4;
 padding: 0.4rem 0rem;
+font-weight: 900;
 
 
 }
@@ -879,7 +880,7 @@ padding: 0.4rem 0rem;
 .table{
     width: 40%;
     margin: auto;
-    margin-block: 1rem;
+    margin-block: 3rem;
 }
 
 .table>div{
@@ -887,6 +888,8 @@ padding: 0.4rem 0rem;
     display: flex;
     margin-block: 1rem;
     justify-content: space-between;
+    font-size: 16px;
+    font-weight: 600;
 }
 button{
     width: 100%;
@@ -896,16 +899,9 @@ button{
     color: whitesmoke;
 }
 
-.bottonwrite{
-    width: 90%;
-    margin: auto;
-    margin-top: 5rem;
-    margin-bottom: 2rem;
-}
 
-.bottonwrite> p, span{
-    font-size: 13px;
-}
+
+
 
 
 
@@ -940,16 +936,6 @@ button{
     font-size: 14px;
   }
 
-  .bottonwrite {
-    width: 95%;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .bottonwrite > p,
-  .bottonwrite > span {
-    font-size: 12px;
-  }
 
 }
 
@@ -963,6 +949,9 @@ button{
 export const Accountnavbar = styled.main`
 padding: 1rem 2rem;
 
+.navv{
+    
+}
 
 .left{
     width: 100%;
@@ -981,13 +970,201 @@ padding: 1rem 2rem;
 
 }
 
+.rigt{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    opacity: .8;
+}
+
+`
+
+
+export const TransferAccount = styled.main`
+
+font-family: "Lato", sans-serif;
+background-color: #eff7ff;
+
+
+ .profilewrapper{
+  border: 0.2px solid #eff7ff;
+    
+ }
+
+.AcctInsured{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 2rem 0rem;
+    gap: 1rem;
+    border-left: 2px solid #007cba;
+    box-shadow: 2px 2px 4px;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+
+h3{
+    width: 80%;
+    margin: 2rem auto;
+}
+
+form{
+    width: 60%;
+    margin: 1rem auto;
+    padding: 1rem;
+    box-shadow: 4px 4px 8px;
+    border-radius: 10px;
+}
+
+
+
+
+form>div{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: 1rem auto;
+}
+
+input{
+    padding: 0.3rem 1rem;
+    outline: none;
+    border-radius: 8px;
+}
+
+button{
+    padding: 0.3rem 1rem;
+    color: whitesmoke;
+    background-color: #007cba;
+    border: 2px solid #007cba;
+}
+
+
+
+.bottonwrite{
+    width: 80%;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.bottonwrite> p, span{
+    font-size: 13px;
+}
+
+
+.amounr{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+    form{
+        width: 95%;
+    }
+
+    form>div{
+        width: 80%;
+    }
+
+
+  .AcctInsured {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+    width: 95%;
+    
+  }
+
+  .AcctInsured>h1{
+    margin-top: 0rem;
+  }
+
+  .bar{
+    display: none;
+  }
+
+
+  .bottonwrite {
+    width: 95%;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .bottonwrite > p,
+  .bottonwrite > span {
+    font-size: 12px;
+  }
+
+  
+
+  }
+
 `
 
 
 
 
 
+export const Loginaccount = styled.main`
+font-family: "Lato", sans-serif;
+font-size: 18px;
 
+form{
+    margin: 3rem auto;
+    width: 50%;
+    box-shadow: 4px 4px 8px;
+    border-radius: 8px;
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+input{
+    padding: 0.3rem 1rem;
+    border-radius: 8px;
+    outline: none;
+}
+
+button{
+    padding: 0.3rem 1rem;
+    border-radius: 8px;
+    background-color:#007cba;
+    color: whitesmoke;
+    border: 1px solid #007cba;;
+}
+form>div{
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+`
 
 
 
@@ -995,7 +1172,7 @@ padding: 1rem 2rem;
 
 export const Footers = styled.footer`
  font-family: "Lato", sans-serif;
-  font-size: 15px;
+  font-size: 17px;
 
 
   .footerwrapper{
