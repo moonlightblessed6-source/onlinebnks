@@ -680,6 +680,17 @@ export const Accountpage = styled.main`
 font-family: "Lato", sans-serif;
 background-color: #eff7ff;
 
+
+.tractionhistoty{
+    border: 3px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    box-shadow: 4px 4px 8px;
+    gap: 1rem;
+}
+
 .accounwrapper{
     width: 80%;
     border: 1px solid #eff7ff;
