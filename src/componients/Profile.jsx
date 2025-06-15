@@ -14,7 +14,7 @@ const Profile = () => {
           return;
         }
 
-        const response = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
+        const response = await fetch('https://web-production-3ff4.up.railway.app/api/account/dashboard', {
           headers: { 'Authorization': `Token ${token}` },
         });
 

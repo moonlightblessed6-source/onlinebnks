@@ -8,25 +8,6 @@ import { MdOutlineClose } from "react-icons/md";
 
 
 
-  // const navagate = useNavigate();
-  // const isLogin = !!localStorage.getItem('authToken');
-  
-  // const [meuedisplay, setMeueDisplay] = useState(false);
-
-  // const handleLogout = () => {
-  //   localStorage.removeItem('authToken');
-  //   navagate('/login');
-
-
-
-
-  // const toggleDisplay = () => {
-  //   setMeueDisplay(prev => !prev);
-  // };
-   
-  // }
-
-
 
 const Nav = () => {
 

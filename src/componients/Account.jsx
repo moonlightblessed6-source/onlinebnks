@@ -15,7 +15,7 @@ const Account = () => {
   useEffect(() => {
     const token = localStorage.getItem('authToken');
 
-    fetch('http://127.0.0.1:8000/api/transactions/history/', {
+    fetch('https://web-production-3ff4.up.railway.app/api/transactions/history/', {
       headers: {
         'Authorization': `Token ${token}`,
         'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ const Account = () => {
           return;
         }
 
-        const response = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
+        const response = await fetch('https://web-production-3ff4.up.railway.app/api/account/dashboard', {
           headers: {
             'Authorization': `Token ${token}`
           }
