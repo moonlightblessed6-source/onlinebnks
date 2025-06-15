@@ -78,7 +78,7 @@ const Account = () => {
       <div className="accounwrapper">
         <div className="accountname">
           <span id='time'><strong>{currentTime || '--:--'}</strong></span>
-          <h1><strong style={{color: '#007cba'}}>M:</strong></h1>
+          <h1><strong style={{color: '#007cba'}}>J:</strong></h1>
           <p style={{fontSize: '20px'}} id='name' >
             <strong>Name:</strong> <span>{name || 'Loading...'}</span>
           </p>

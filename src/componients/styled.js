@@ -8,6 +8,10 @@ export const Navbar = styled.nav`
   font-size: 15px;
   color: whitesmoke;
 
+  .menuwdropdown{
+    display: none;
+  }
+
   .menuw{
     display: none;
   }
@@ -98,6 +102,36 @@ button:hover{
 }
 
 @media screen and (max-width: 1000px){
+    .bottonwrapper{
+        position: relative;
+    }
+        .menuw{
+        display: block;
+
+    }
+
+    a{
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+    }
+      .menuwdropdown{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 200px;
+    border: 1px solid green;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 100%;
+    height: 100vh;
+    background-color: white;
+    color: black;
+
+  }
     .bottonline{
         display: none;
     }
@@ -105,9 +139,7 @@ button:hover{
     .right{
         display: none;
     }
-    .menuw{
-        display: block;
-    }
+
 
     .left{
         width: 50%;
@@ -682,13 +714,14 @@ background-color: #eff7ff;
 
 
 .tractionhistoty{
-    border: 3px solid green;
+    border: 2px solid #007cba;;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 2rem;
     box-shadow: 4px 4px 8px;
     gap: 1rem;
+    margin-block: 2rem;
 }
 
 .accounwrapper{
@@ -782,6 +815,30 @@ button{
 
 
 @media screen and (max-width: 1000px) {
+
+     .tractionhistoty {
+    padding: 10px;
+    overflow-x: auto; /* allow horizontal scroll for table */
+  }
+
+  .tractionhistoty table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px; /* slightly smaller text */
+  }
+
+  .tractionhistoty table thead tr {
+    background-color: #f0f0f0;
+  }
+
+  .tractionhistoty table th,
+  .tractionhistoty table td {
+    padding: 8px 6px;
+    white-space: nowrap; /* prevent wrapping inside cells */
+    text-align: left;
+  }
+
+
   .accounwrapper {
     width: 95%;
     margin: auto;
@@ -992,6 +1049,13 @@ a{
     text-decoration: none;
     color: black;
     opacity: .8;
+}
+
+@media screen and (max-width: 1000px) {
+    .left{
+        display: none;
+    }
+    
 }
 
 `
@@ -1274,4 +1338,427 @@ color: whitesmoke;
 
 
 }
+`
+
+
+
+
+
+
+
+
+export const Footman = styled.main`
+.wrappers{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    margin-block: 2rem;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+  .wrappers {
+    grid-template-columns: 1fr; /* single column */
+  }
+}
+`
+
+
+
+
+
+export const Personalpr = styled.main`
+font-family: "Lato", sans-serif;
+  font-size: 17px;
+
+  .bann{
+    width: 100%;
+
+  }
+  img{
+    width: 100%;
+  }
+
+.sectionOne{
+    
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.save{
+    display: flex;
+    color: #007cba;
+    margin-block: 2rem;
+    font-size: 37px;
+    font-weight: 700;
+    justify-content: space-between;
+}
+
+.linebutton{
+    border-bottom: 3px solid #007cba;
+    /* padding: 1rem; */
+    width: 98%;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 70%;
+    margin-left: auto;
+    /* border: 3px solid; */
+    gap: 2rem;
+}
+
+.cards>div{
+    background-color: #fdd756;
+    padding: 2px 2px;
+    border-radius: 15px;
+}
+
+.heading{
+    padding: 1rem 0.6rem;
+    color: #007cba;
+    
+}
+
+h3{
+font-size: 19px;
+font-weight: 600;
+}
+p{
+font-size: 17px;
+font-weight: 350;
+}
+
+
+.writeup{
+    background-color: white;
+    color: black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 0.7rem;
+}
+
+button{
+    border: none;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    background-color:  #007cba;
+    
+
+}
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .bann{
+    max-width: 100%;
+    }
+    img{
+        width: 100%;
+    }
+    .sectionOne {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    .save {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 30px;
+        width: 90%;
+    }
+    
+
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    h3 {
+        font-size: 17px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    button {
+        padding: 0.4rem 0.8rem;
+        font-size: 14px;
+    }
+}
+
+
+`
+
+
+
+export const Businessnav = styled.main`
+font-family: "Lato", sans-serif;
+  font-size: 17px;
+
+img{
+    width: 100%;
+}
+.busineserapper{
+ background-color: #f9f8f6;
+}
+
+
+.business{
+    width: 90%;
+    margin: auto;
+    border: 1px solid #f9f8f6;;
+}
+
+.save{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-block: 1rem;
+}
+
+.save>span{
+    font-size: 35px;
+    font-weight: 900;
+    color: #007cba;
+}
+
+.line{
+    border-bottom: 3px solid yellow;
+    width: 97%;
+}
+
+.cards{
+    width: 70%;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.cards>div{
+    margin-block: 1rem;
+ background-color: #007cba;
+ padding: 4px 4px;
+ border-radius: 15px;
+}
+
+.bodies{
+    background-color: white;
+    padding: 0.9rem;
+    border-bottom-right-radius: 15px ;
+    border-bottom-left-radius: 15px ;
+}
+p{
+    font-size: 23px;
+}
+.bodies>span{
+    font-size: 18px;
+    font-weight: 350;
+}
+
+button{
+    border-radius: 15px;
+    background-color: #007cba;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: whitesmoke;
+    
+}
+
+.heading{
+    padding: 1rem;
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+.heading>span{
+    font-size: 25px;
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+  .business {
+    width: 95%;
+  }
+
+  .save {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .save > span {
+    font-size: 28px;
+  }
+
+  .cards {
+    width: 100%;
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    gap: 1rem;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .bodies > span {
+    font-size: 16px;
+  }
+
+  .heading > span {
+    font-size: 22px;
+  }
+
+  button {
+    width: 100%; /* Make buttons full width on smaller screens */
+    text-align: center;
+  }
+}
+
+
+`
+
+
+
+
+
+
+export const Resoucesss = styled.main`
+font-family: "Lato", sans-serif;
+  font-size: 17px;
+
+  .bann{
+    width: 100%;
+
+  }
+  img{
+    width: 100%;
+  }
+
+.sectionOne{
+    
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.save{
+    display: flex;
+    color:#695070;
+    margin-block: 2rem;
+    font-size: 37px;
+    font-weight: 700;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.linebutton{
+    border-bottom: 3px solid  #695070;
+    width: 90%;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 70%;
+    margin-left: auto;
+    /* border: 3px solid; */
+    gap: 2rem;
+}
+
+.cards>div{
+    background-color: #a57db0;
+    padding: 2px 2px;
+    border-radius: 15px;
+}
+
+.heading{
+    padding: 1rem 0.6rem;
+    color: white;
+    
+}
+
+h3{
+font-size: 19px;
+font-weight: 600;
+}
+p{
+font-size: 17px;
+font-weight: 350;
+}
+
+
+.writeup{
+    background-color: white;
+    color: black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 0.7rem;
+}
+
+button{
+    border: none;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    background-color: #695070;
+    
+
+}
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .bann{
+    max-width: 100%;
+    }
+    img{
+        width: 100%;
+    }
+    .sectionOne {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    .save {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 30px;
+        width: 90%;
+    }
+    
+
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    h3 {
+        font-size: 17px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    button {
+        padding: 0.4rem 0.8rem;
+        font-size: 14px;
+    }
+}
+
+
 `

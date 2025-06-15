@@ -48,10 +48,34 @@ const Nav = () => {
 
 
            <div className="bottonwrapper">
+              <div className="menuwdropdown">
+              <div><span>Close</span></div>
+              <Link>Home</Link>
+              <Link>Account</Link>
+              <Link>Transfer</Link>
+              <Link>Profile</Link>
+              <Link>Logout</Link>
+
+              <Link>Personal</Link>
+              <Link>Business</Link>
+              <Link>Resources</Link>
+              <Link>Insurance</Link>
+              <Link>About</Link>
+              <Link>Contact Us</Link>
+              <Link>Help</Link>
+              <Link>Secure login</Link>
+
+            </div>
             
           <div className="downnav">
-            <div className="menuw"><TiThMenu style={{fontSize: '30px', color: 'black'}} /></div>
+            <div className="menuw"><TiThMenu style={{fontSize: '30px', color: 'black'}} />
+
+            </div>
+
+
+
             <div className="left"><img src={logo} alt="logo" /></div>
+
 
             <div className="right">
               {isLogin ? (
@@ -64,9 +88,9 @@ const Nav = () => {
               </div>
               ):(
               <div style={{display: 'flex', gap: '16px'}}>
-               <Link style={{color: 'black'}}>Personal</Link>
-              <Link style={{color: 'black'}}>Business</Link>
-              <Link style={{color: 'black'}}>Resources</Link>
+               <Link to='/personal' style={{color: 'black'}}>Personal</Link>
+              <Link to='/business' style={{color: 'black'}}>Business</Link>
+              <Link to='/rouces' style={{color: 'black'}}>Resources</Link>
               <Link style={{color: 'black'}}>Insurance</Link>
               </div>
               )}

@@ -14,12 +14,12 @@ const Footer = () => {
             
             <ul>
               <h5><strong>About</strong></h5>
-                <li>Our Company</li>
-                <li>Social Impact</li>
-                <li>Careers</li>
-                <li>Investor Relations</li>
-                <li>Suppliers</li>
-                <li>Media Center</li>
+                <li><Link to='/about' style={{color: 'whitesmoke'}}>Our Company</Link></li>
+                <li><Link to='/about' style={{color: 'whitesmoke'}}>Social Impact</Link></li>
+                <li><Link to='/about' style={{color: 'whitesmoke'}}>Careers</Link></li>
+                <li><Link to='/about' style={{color: 'whitesmoke'}}>Investor Relations</Link></li>
+                <li><Link to='/about' style={{color: 'whitesmoke'}}>Suppliers</Link></li>
+                <li><Link to='/about' style={{color: 'whitesmoke'}}>Media Center</Link></li>
             </ul>
           </div>
 
@@ -27,18 +27,18 @@ const Footer = () => {
      
             <ul>
               <h5><strong>Business Solutions</strong></h5>
-                <li>Corporate Finance</li>
-                <li>Dealer Services</li>
-                <li>Ally Ventures</li>
+              <li><Link to='/footwrite#about' style={{color: 'whitesmoke'}}>Corporate Finance</Link></li>
+              <li><Link to='/footwrite#about' style={{color: 'whitesmoke'}}>Dealer Services</Link></li>
+              <li><Link to='/footwrite#about' style={{color: 'whitesmoke'}}>JETSTREAM FCU</Link></li>
             </ul>
           </div>
 
           <div>
             <ul>
                <h5><strong>Learn</strong></h5>
-                <li>Conversationally</li>
-                <li>Financial Education Programs</li>
-                <li>Mortgage Assistance</li>
+               <li><Link to='/footwrite#about' style={{color: 'whitesmoke'}}>Conversationally</Link></li>
+               <li><Link to='/footwrite#about' style={{color: 'whitesmoke'}}>Financial Education Programs</Link></li>
+               <li><Link to='/footwrite#about' style={{color: 'whitesmoke'}}>Mortgage Assistance</Link></li>
             </ul>
           </div>
 
@@ -46,15 +46,12 @@ const Footer = () => {
 
             <ul>
                 <h5><strong>Resources</strong></h5>
-                <li><Link to='/contact' style={{color: 'whitesmoke'}}>Contact</Link></li>
+                <li><Link to='/contact' style={{color: 'whitesmoke'}}>Contact</Link></li>                
                 <li>Give Feedback</li>
-                <li>ATM Locator</li>
-                <li>Site Map</li>
-                <li>Shop JETSTREAM Gear</li>
-                <li>Accessibility</li>
+                <li><Link to='/footwrite#about' style={{color: 'whitesmoke'}}>Accessibility</Link></li>
             </ul>
           </div>
-
+{/* 
           <div>
 
             <ul>
@@ -65,7 +62,7 @@ const Footer = () => {
                 <li>Security</li>
                 <li>Targeted Advertising Preferences</li>
             </ul>
-          </div>
+          </div> */}
         </div>
         <hr />
         <div className="bottonlast">
