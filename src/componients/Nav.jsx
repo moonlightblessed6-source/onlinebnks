@@ -1,24 +1,56 @@
-import React  from "react";
+import React, { useState }  from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from '../assets/logo/js_logo_placeholder.svg'
 import {Navbar} from './styled'
 import { TiThMenu } from "react-icons/ti";
+import { MdOutlineClose } from "react-icons/md";
 
 
+
+
+  // const navagate = useNavigate();
+  // const isLogin = !!localStorage.getItem('authToken');
+  
+  // const [meuedisplay, setMeueDisplay] = useState(false);
+
+  // const handleLogout = () => {
+  //   localStorage.removeItem('authToken');
+  //   navagate('/login');
+
+
+
+
+  // const toggleDisplay = () => {
+  //   setMeueDisplay(prev => !prev);
+  // };
+   
+  // }
 
 
 
 const Nav = () => {
 
-  const navagate = useNavigate();
-  const isLogin = !!localStorage.getItem('authToken');
 
-  const handleLogout = () => {
-    localStorage.removeItem('authToken');
-    navagate('/login');
+const navigate = useNavigate();
+const isLogin = !!localStorage.getItem('authToken');
 
-   
-  }
+const [meuedisplay, setMeueDisplay] = useState(false);
+
+// Correctly defined logout handler
+const handleLogout = () => {
+  localStorage.removeItem('authToken');
+  navigate('/login');
+};
+
+// Correctly defined toggle function (outside of handleLogout)
+const toggleDisplay = () => {
+  setMeueDisplay(prev => !prev);
+};
+
+const closedrop = () => {
+  setMeueDisplay(false);
+};
+
     return(
       // <img src={ally} alt="ally" />
         <Navbar>
@@ -48,27 +80,38 @@ const Nav = () => {
 
 
            <div className="bottonwrapper">
+            {meuedisplay &&(
               <div className="menuwdropdown">
-              <div><span>Close</span></div>
-              <Link>Home</Link>
-              <Link>Account</Link>
-              <Link>Transfer</Link>
-              <Link>Profile</Link>
+              {isLogin ? (
+              <div className="topdropOne">
+               <div className="closedrop" onClick={closedrop}><MdOutlineClose /></div>
+              <Link to='/' onClick={() => setMeueDisplay(false)}>Home</Link>
+              <Link to='/account' onClick={() => setMeueDisplay(false)}>Account</Link>
+              <Link to='/account/transfer' onClick={() => setMeueDisplay(false)}>Transfer</Link>
+              <Link to='/account/profile' onClick={() => setMeueDisplay(false)}>Profile</Link>
+              <Link to='/contact' onClick={() => setMeueDisplay(false)}>Contact Us</Link>
               <Link>Logout</Link>
-
-              <Link>Personal</Link>
-              <Link>Business</Link>
-              <Link>Resources</Link>
-              <Link>Insurance</Link>
-              <Link>About</Link>
-              <Link>Contact Us</Link>
-              <Link>Help</Link>
-              <Link>Secure login</Link>
-
+              </div>
+              ):(
+                <div className="topdrop">
+              <div className="closedrop" onClick={closedrop}><MdOutlineClose /></div>
+              <Link to='/personal' onClick={() => setMeueDisplay(false)}>Personal</Link>
+              <Link to='/business' onClick={() => setMeueDisplay(false)}>Business</Link>
+              <Link to='/rouces' onClick={() => setMeueDisplay(false)}>Resources</Link>
+              <Link onClick={() => setMeueDisplay(false)}>Insurance</Link>
+              <Link to='/about' onClick={() => setMeueDisplay(false)}>About</Link>
+              <Link to='/contact' onClick={() => setMeueDisplay(false)}>Contact Us</Link>
+              <Link onClick={() => setMeueDisplay(false)}>Help</Link>
+              <Link to='/login' onClick={() => setMeueDisplay(false)}>Secure login</Link>
+              <span style={{textAlign: 'center'}}>Routing number<br /> 267080355</span>
+                </div>
+              )}
             </div>
+            )}
+
             
           <div className="downnav">
-            <div className="menuw"><TiThMenu style={{fontSize: '30px', color: 'black'}} />
+            <div className="menuw" onClick={toggleDisplay}><TiThMenu style={{fontSize: '30px', color: 'black'}} />
 
             </div>
 

@@ -115,14 +115,38 @@ button:hover{
         text-decoration: none;
         font-size: 20px;
     }
+    .topdrop{
+       display: flex;
+       flex-direction: column;
+       margin-top: -7rem;
+       gap: 1.3rem;
+       align-items: center;
+       justify-content: center;
+    }
+
+    .topdropOne{
+        display: flex;
+       flex-direction: column;
+       margin-top: -17rem;
+       gap: 1.3rem;
+       align-items: center;
+       justify-content: center;
+    }
+
+    .closedrop{
+       color: red;
+       font-size: 30px;
+       
+    }
+    
       .menuwdropdown{
+        z-index: 100;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     width: 200px;
-    border: 1px solid green;
     position: absolute;
     top: 0;
     left: 0;
@@ -1236,6 +1260,16 @@ form>div{
     margin: auto;
     display: flex;
     flex-direction: column;
+
+}
+
+@media screen and (max-width: 1000px) {
+    form{
+     width: 90%;
+    }
+    form>div{
+        width: 90%;
+    }
 
 }
 
