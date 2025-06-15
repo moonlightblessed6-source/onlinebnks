@@ -1177,7 +1177,12 @@ button{
 
 
 
+
 @media screen and (max-width: 1000px) {
+
+    .otp-modal{
+        width: 90% !important;
+    }
 
     form{
         width: 95%;

@@ -91,7 +91,7 @@ const Account = () => {
           <div className='bar'><h1><span>|</span></h1></div>
           <div>
             <h1><span style={{fontSize: '15px'}}>
-              FDIC-Insured - Backed by the full faith and credit of the U.S. Government. Goldman Sachs Bank USA. Satt Lake City Branch.
+              FDIC-Insured - Backed by the full faith and credit of the U.S. Government. Jetstream FCU Bank USA.
             </span></h1>
           </div>
         </div>
@@ -101,7 +101,11 @@ const Account = () => {
           <p id='account_number'>Online Checking <span>- {accountNumber || '----'}</span></p>
           <span id='balance'>
             <strong style={{fontSize: '30px'}}>
-              ${balance != null ? balance.toFixed(2) : '0.00'}
+              {/* ${balance != null ? balance.toFixed(2) : '0.00'} */}
+              ${balance != null 
+  ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) 
+  : '0.00'}
+
             </strong>
           </span>
           <span>Current Balance</span>

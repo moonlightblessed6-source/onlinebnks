@@ -141,7 +141,7 @@ const Transfer = () => {
           <div>
             <h1>
               <span style={{ fontSize: '15px' }}>
-                FDIC-Insured - Backed by the full faith and credit of the U.S. Government. Goldman Sachs Bank USA.
+                FDIC -Insured | FDIC-Insured - Backed by the full faith and credit of the U.S. Government. Jetstream FCU Bank USA.
               </span>
             </h1>
           </div>
@@ -150,7 +150,12 @@ const Transfer = () => {
         <div className="amounr">
           <p><strong>Amount</strong></p>
           <div className="amount">
-            <span><strong style={{ fontSize: '25px' }}>${parseFloat(balance).toFixed(2)}</strong></span>
+            <span><strong style={{ fontSize: '25px' }}>
+              {/* ${parseFloat(balance).toFixed(2)} */}
+                            ${balance != null 
+  ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) 
+  : '0.00'}
+              </strong></span>
           </div>
         </div>
 
