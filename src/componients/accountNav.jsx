@@ -1,20 +1,59 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo/js_logo_placeholder.svg'
+import logos from '../assets/logo/logos.png'
 import {Accountnavbar} from './styled'
+import { MdAccountCircle } from "react-icons/md";
+
 
 const AccountNav = () => {
+
+  const [name, setName] = useState('');
+
+
+  useEffect(() => {
+      const fetchDashboard = async () => {
+        try {
+          const token = localStorage.getItem('authToken');
+          if (!token) {
+            console.error('No auth token found');
+            return;
+          }
+  
+          const response = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
+            headers: {
+              'Authorization': `Token ${token}`
+            }
+          });
+  
+          if (!response.ok) {
+            throw new Error('Failed to fetch dashboard data');
+          }
+  
+          const data = await response.json();
+  
+          const firstName = data.account?.first_name || '';
+          const lastName = data.account?.last_name || '';
+          const fullName = `${firstName} ${lastName}`.trim();
+  
+          setName(fullName);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+  
+      fetchDashboard();
+    }, []);
+
   return (
     <Accountnavbar>
       <div className="accountNavWrapper">
-        <div className="left"><img src={logo} alt="logo" /></div>
+        <div className="left"><img src={logos} alt="logo" /></div>
 
         <div className="rigt">
-            <Link to='/'>Home</Link>
-            <Link to='account'>Account</Link>
-            <Link to='/account/transfer'>Transfer</Link>
-            <Link to='/help'>Help</Link>
-            <Link to='/account/profile'>Profile</Link>
+         
+            <a style={{fontSize: '20px', color: 'white'}} id='name' >
+            <strong></strong> <span> {name || 'Loading...'} <MdAccountCircle style={{fontSize: '27px'}} /></span>
+          </a>
         </div>
       </div>
     </Accountnavbar>

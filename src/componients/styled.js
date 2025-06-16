@@ -416,6 +416,7 @@ width: 90%;
 margin: auto;
 padding: 0.8rem 0rem;
 }
+
 .form{
     width: 90%;
     margin: auto;
@@ -766,24 +767,7 @@ background-color: #eff7ff;
     gap: 1rem;
 }
 
-.AcctInsured{
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    padding: 3rem 2rem;
-    gap: 1rem;
-    border-left: 2px solid #007cba;
-    box-shadow: 2px 2px 4px;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-.AcctInsured>div>h1{
-    font-size: 21px;
-    
-}
-.AcctInsured>div>p{
-    font-size: 16px;
-}
+
 
 .checking{
     display: flex;
@@ -881,19 +865,6 @@ button{
     display: none;
   }
 
-  .AcctInsured {
-    flex-direction: column;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .AcctInsured > div > h1 {
-    font-size: 18px;
-  }
-
-  .AcctInsured > div > p {
-    font-size: 14px;
-  }
 
   .checking {
     padding: 1rem;
@@ -928,141 +899,38 @@ button{
 
 
 
-
-export const AccountProfile = styled.main`
-font-family: "Lato", sans-serif;
-background-color: #eff7ff;
-
-
- .profilewrapper{
-  border: 0.2px solid #eff7ff;
-    
- }
-
-.AcctInsured{
-    margin: 3rem auto;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    padding: 2rem 0rem;
-    gap: 1rem;
-    border-left: 2px solid #007cba;
-    box-shadow: 2px 2px 4px;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-h1{
- font-size: 20px;
- text-align: center;
-}
-.basicinfo>span{
-    display: flex;
-    justify-content: center;
-}
-
-.basicinfo{
-padding: 0.4rem 0rem;
-font-weight: 900;
-
-
-}
-
-.table{
-    width: 40%;
-    margin: auto;
-    margin-block: 3rem;
-}
-
-.table>div{
-    border-bottom: 1px solid lightgray;
-    display: flex;
-    margin-block: 1rem;
-    justify-content: space-between;
-    font-size: 16px;
-    font-weight: 600;
-}
-button{
-    width: 100%;
-    padding: 0.4rem 2rem;
-    border: 1px solid #007cba;;
-    background-color: #007cba;
-    color: whitesmoke;
-}
-
-
-
-
-
-
-
-
-@media screen and (max-width: 1000px) {
-
-
-  .AcctInsured {
-    flex-direction: column;
-    padding: 1rem;
-    text-align: center;
-  }
-  .bar{
-    display: none;
-  }
-
-   .table {
-    width: 90%;
-    margin: auto;
-    margin-block: 1rem;
-  }
-
-  .table > div {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  button {
-    width: 100%;
-    padding: 0.6rem 1rem;
-    font-size: 14px;
-  }
-
-
-}
-
-
-
-
-`
-
-
-
 export const Accountnavbar = styled.main`
 padding: 1rem 2rem;
+background-color: #121a27;
 
-.navv{
-    
-}
 
 .left{
     width: 100%;
 }
 
 .left>img{
-    width: 300px;
+    width: 200px;
 }
 
 .accountNavWrapper{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
     margin: auto;
 
 }
 
+a{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    width: 320px;
+    text-align: end;
+    vertical-align: middle;
+}
+
 .rigt{
+    cursor: pointer;
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -1071,7 +939,7 @@ padding: 1rem 2rem;
 
 a{
     text-decoration: none;
-    color: black;
+    color: white;
     opacity: .8;
 }
 
@@ -1085,147 +953,6 @@ a{
 `
 
 
-export const TransferAccount = styled.main`
-
-font-family: "Lato", sans-serif;
-background-color: #eff7ff;
-
-
- .profilewrapper{
-  border: 0.2px solid #eff7ff;
-    
- }
-
-.AcctInsured{
-    margin: auto;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    padding: 2rem 0rem;
-    gap: 1rem;
-    border-left: 2px solid #007cba;
-    box-shadow: 2px 2px 4px;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-
-h3{
-    width: 80%;
-    margin: 2rem auto;
-}
-
-form{
-    width: 60%;
-    margin: 1rem auto;
-    padding: 1rem;
-    box-shadow: 4px 4px 8px;
-    border-radius: 10px;
-}
-
-
-
-
-form>div{
-    display: flex;
-    flex-direction: column;
-    width: 35%;
-    margin: 1rem auto;
-}
-
-input{
-    padding: 0.3rem 1rem;
-    outline: none;
-    border-radius: 8px;
-}
-
-button{
-    padding: 0.3rem 1rem;
-    color: whitesmoke;
-    background-color: #007cba;
-    border: 2px solid #007cba;
-}
-
-
-
-.bottonwrite{
-    width: 80%;
-    margin: auto;
-    margin-top: 5rem;
-    margin-bottom: 2rem;
-}
-
-.bottonwrite> p, span{
-    font-size: 13px;
-}
-
-
-.amounr{
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-
-
-
-
-
-
-
-@media screen and (max-width: 1000px) {
-
-    .otp-modal{
-        width: 90% !important;
-    }
-
-    form{
-        width: 95%;
-    }
-
-    form>div{
-        width: 80%;
-    }
-
-
-  .AcctInsured {
-    flex-direction: column;
-    padding: 1rem;
-    text-align: center;
-    width: 95%;
-    
-  }
-
-  .AcctInsured>h1{
-    margin-top: 0rem;
-  }
-
-  .bar{
-    display: none;
-  }
-
-
-  .bottonwrite {
-    width: 95%;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .bottonwrite > p,
-  .bottonwrite > span {
-    font-size: 12px;
-  }
-
-  
-
-  }
-
-`
 
 
 
@@ -1798,6 +1525,369 @@ a{
         font-size: 14px;
     }
 }
+
+
+`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const DashbaordAcccount = styled.main`
+font-family: "Lato", sans-serif;
+
+
+.dashboardwrapper{
+    display: flex;
+    background-color: #121a27;
+}
+.leftSideBar{
+    padding: 0.4rem 1rem;
+    height: 100%;
+    color: white;
+    width: 25%;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* border-right: 1px solid lightgrey; */
+    border-top: 1px solid lightgrey;
+}
+
+
+.linkbtn{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+
+.linkbtn>a>button{
+    padding: 0.5rem 2rem;
+    color: whitesmoke;
+    background-color: #192436;
+    border: none;
+    width: 200px;
+    border-radius: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.menus{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 2.3rem;
+}
+
+.balance{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    
+}
+.btndv{
+    margin-block: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    
+}
+.btndv>a>button{
+    padding: 0.5rem 0.5rem;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+    border-radius: 7px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+
+}
+
+
+.rightInof{
+    color: white;
+    /* background-color: green; */
+    border-left: 2px solid lightgray;
+    border-top: 1px solid lightgray;
+    padding: 1rem;
+    width: 100%;
+}
+
+.tractionhistoty{
+    display: flex;
+    gap: 2rem;
+    /* column-gap: 2rem; */
+    flex-direction: column;
+}
+
+
+
+
+/* profile */
+
+
+h1{
+ font-size: 20px;
+ text-align: center;
+}
+.basicinfo>span{
+    display: flex;
+    justify-content: center;
+}
+
+.basicinfo{
+padding: 0.4rem 0rem;
+font-weight: 900;
+
+
+}
+
+.table{
+    width: 70%;
+    margin: auto;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.table>div{
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    margin-block: 1rem;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 600;
+   
+}
+
+button{
+    width: 100%;
+    padding: 0.4rem 2rem;
+    border: 1px solid #007cba;;
+    background-color: #007cba;
+    color: whitesmoke;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+
+
+ 
+
+   .table {
+    width: 90%;
+    margin: auto;
+    margin-block: 1rem;
+  }
+
+  .table > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 14px;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+     .tractionhistoty {
+    padding: 10px;
+    overflow-x: auto; /* allow horizontal scroll for table */
+  }
+
+  .tractionhistoty table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px; /* slightly smaller text */
+  }
+
+  .tractionhistoty table thead tr {
+    background-color: #f0f0f0;
+  }
+
+  .tractionhistoty table th,
+  .tractionhistoty table td {
+    padding: 8px 6px;
+    white-space: nowrap; /* prevent wrapping inside cells */
+    text-align: left;
+  }
+
+}
+
+
+
+
+/* ======================================================================================== */
+/* transfer form */
+
+
+
+.AcctInsured{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 2rem 0rem;
+    /* gap: 1rem; */
+    border-left: 2px solid #007cba;
+    box-shadow: 2px 2px 4px;
+    align-items: center;
+    margin-bottom: 3rem;
+
+}
+
+h3{
+    width: 80%;
+    margin: 2rem auto;
+}
+
+form{
+    width: 80%;
+    margin: 1rem auto;
+    padding: 1rem;
+    box-shadow: 4px 4px 8px;
+    border-radius: 10px;
+}
+
+
+
+
+form>div{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 1rem auto;
+}
+
+input{
+    padding: 0.3rem 1rem;
+    outline: none;
+    border-radius: 8px;
+}
+
+button{
+    padding: 0.3rem 1rem;
+    color: whitesmoke;
+    background-color: #007cba;
+    border: 2px solid #007cba;
+}
+
+
+
+
+.amounr{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+    .otp-modal{
+        width: 90% !important;
+    }
+
+    form{
+        width: 95%;
+    }
+
+    form>div{
+        width: 80%;
+    }
+
+
+  .AcctInsured {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+    width: 95%;
+    
+  }
+
+  .AcctInsured>h1{
+    margin-top: 0rem;
+  }
+
+  .bar{
+    display: none;
+  }
+
+
+  .bottonwrite {
+    width: 95%;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .bottonwrite > p,
+  .bottonwrite > span {
+    font-size: 12px;
+  }
+
+  
+
+  }
 
 
 `

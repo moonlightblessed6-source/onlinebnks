@@ -6,15 +6,13 @@ import About from './componients/About'
 import Homepage from './componients/Homepage'
 import ContactUs from './componients/contact'
 import { useLocation } from 'react-router-dom'
-import Account from './componients/Account'
 import ProtectedRoute from './componients/ProtectedRoute'
-import AccountProfile from './componients/Profile'
 import AccountNav from './componients/accountNav'
-import Transfer from './componients/Transfer'
 import Login from './componients/Login'
 import Foot from './componients/foot'
 import Personal from './componients/Personal'
 import Business from './componients/Business'
+import AccountDashbaord from './componients/AccountDashbaord'
 import Reouce from './componients/Reouces'
 
 
@@ -33,6 +31,7 @@ const showAccountNav = location.pathname.startsWith('/account')
       {!location.pathname.startsWith('/account') && <Nav />}
       {showAccountNav && <AccountNav />}
       <Routes>
+        
         <Route path='/footwrite' element={<Foot />} />
         <Route path='/personal' element={<Personal />} />
         <Route path='/business' element={<Business />} />
@@ -41,9 +40,9 @@ const showAccountNav = location.pathname.startsWith('/account')
         <Route path='/' element={<Homepage />}/>
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<ContactUs />} />
-        <Route path='/account' element={<ProtectedRoute><Account /></ProtectedRoute> } />
-        <Route path='/account/profile' element={<ProtectedRoute><AccountProfile /> </ProtectedRoute>} />
-        <Route path='/account/transfer' element={ <ProtectedRoute><Transfer /></ProtectedRoute> } />
+        {/* <Route path='/account' element={<ProtectedRoute><Account /></ProtectedRoute> } /> */}
+        <Route path='/account' element={<ProtectedRoute><AccountDashbaord /></ProtectedRoute>}/>
+
         
 
       </Routes>

@@ -30,7 +30,7 @@ const Transfer = () => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('Auth token not found');
 
-      const response = await fetch('https://web-production-3ff4.up.railway.app/api/account/dashboard', {
+      const response = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
         headers: {
           Authorization: `Token ${token}`,
         },
@@ -63,7 +63,7 @@ const Transfer = () => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('No auth token');
 
-      const response = await fetch('https://web-production-3ff4.up.railway.app/api/transfers/', {
+      const response = await fetch('http://127.0.0.1:8000/api/transfers/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ const Transfer = () => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('No auth token');
 
-      const response = await fetch(`https://web-production-3ff4.up.railway.app/api/transfers/${transferId}/verify/`, {
+      const response = await fetch(`http://127.0.0.1:8000/api/transfers/${transferId}/verify/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
