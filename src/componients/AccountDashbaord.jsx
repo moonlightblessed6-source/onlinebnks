@@ -7,6 +7,8 @@ import { MdOutlineDashboard, MdManageAccounts, MdOutlineHistoryToggleOff } from 
 import { BiSupport, BiTransfer } from "react-icons/bi";
 import { RiLuggageDepositFill } from "react-icons/ri";
 import { IoIosSend, IoIosLogOut } from "react-icons/io";
+import { FaLongArrowAltRight } from "react-icons/fa";
+
 
 
 
@@ -234,7 +236,7 @@ const AccountDashbaord = () => {
               <Link onClick={() => setCurrentTab('transfermoney')}><BiTransfer /> International Wire Transfer</Link>
               <Link onClick={depositcheck}><RiLuggageDepositFill /> Depoit Check</Link>
               <Link onClick={handlelogout}><IoIosLogOut /> Logout</Link>
-              <Link><BiSupport /> Support</Link>
+              <Link to='/contact'><BiSupport /> Support</Link>
               <span>Routing number 267080355</span>
             </div>
         
@@ -287,10 +289,24 @@ const AccountDashbaord = () => {
 
          {currentTab === 'Dashboard' && (
          <div className="Dashboard">
-            <h1>hello how are</h1>
-            <h1>hello how are</h1>
-            <h1>hello how are</h1>
-            <h1>hello how are</h1>
+            <div className="headerss">
+                <div className='welcomname'>
+                    <span><strong>Welcome back:&nbsp;</strong> <strong>{name || 'Loading...'}</strong></span>
+                    <span>At a glance summary of your account!</span>
+                </div>
+                <div className='atag'>
+                   <Link style={{backgroundColor: '#353eff'}}>Deposit <FaLongArrowAltRight /></Link>
+                   <Link style={{backgroundColor: '#39475e'}}>Transfer Fund <FaLongArrowAltRight /></Link>
+                </div>
+            </div>
+
+            <div className="overviewaccounts">
+              <div className="hessds">
+                <span>Overview</span>
+                <span>Checking Account</span>
+              </div>
+            </div>
+
             </div>
          )}
 

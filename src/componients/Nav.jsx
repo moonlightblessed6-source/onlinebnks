@@ -67,9 +67,7 @@ const closedrop = () => {
               <div className="topdropOne">
                <div className="closedrop" onClick={closedrop}><MdOutlineClose /></div>
               <Link to='/' onClick={() => setMeueDisplay(false)}>Home</Link>
-              <Link to='/account' onClick={() => setMeueDisplay(false)}>Account</Link>
-              <Link to='/account/transfer' onClick={() => setMeueDisplay(false)}>Transfer</Link>
-              <Link to='/account/profile' onClick={() => setMeueDisplay(false)}>Profile</Link>
+              <Link to='/account/dashboard' onClick={() => setMeueDisplay(false)}>Account</Link>
               <Link to='/contact' onClick={() => setMeueDisplay(false)}>Contact Us</Link>
               <Link>Logout</Link>
               </div>
@@ -105,9 +103,9 @@ const closedrop = () => {
               {isLogin ? (
               <div style={{display: 'flex', gap: '16px'}}>
               <Link to='/' style={{color: 'black'}}>Home</Link>
-              <Link to='/account' style={{color: 'black'}}>Account</Link>
-              <Link to='/account/transfer' style={{color: 'black'}}>Transfer</Link>
-              <Link to='/account/profile' style={{color: 'black'}}>Profile</Link>
+              <Link to='/account/dashboard' style={{color: 'black'}}>Account</Link>
+              
+
               
               </div>
               ):(

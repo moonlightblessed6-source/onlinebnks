@@ -74,7 +74,7 @@ const Account = () => {
   }, []);
 
   return (
-    <Accountpage>
+    <>
       <div className="accounwrapper">
         <div className="accountname">
           <span id='time'><strong>{currentTime || '--:--'}</strong></span>

@@ -1890,4 +1890,28 @@ button{
   }
 
 
+  .Dashboard{
+    width: 90%;
+    margin: auto;
+  }
+
+.headerss{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+    border: 0.3px solid lightgray;
+    border-radius: 4px;
+}
+
+.welcomname{
+    display: flex;
+    flex-direction: column;
+}
+
+.atag>a{
+   margin-left: 1rem;
+   padding: 0.4rem 1rem;
+   border-radius: 4px;
+}
 `

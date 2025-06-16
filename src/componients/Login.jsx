@@ -35,7 +35,7 @@ const Login = () => {
       localStorage.setItem('authToken', data.token);
 
       alert('Login successful!');
-      navigate('/account');
+      navigate('/account/dashboard');
       // No need to reload, just navigate
     } catch (err) {
       setError(err.message);

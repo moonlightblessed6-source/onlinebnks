@@ -40,8 +40,7 @@ const showAccountNav = location.pathname.startsWith('/account')
         <Route path='/' element={<Homepage />}/>
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<ContactUs />} />
-        {/* <Route path='/account' element={<ProtectedRoute><Account /></ProtectedRoute> } /> */}
-        <Route path='/account' element={<ProtectedRoute><AccountDashbaord /></ProtectedRoute>}/>
+        <Route path='/account/dashboard' element={<ProtectedRoute><AccountDashbaord /></ProtectedRoute>}/>
 
         
 
