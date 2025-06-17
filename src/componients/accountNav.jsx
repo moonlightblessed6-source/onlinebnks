@@ -21,7 +21,7 @@ const AccountNav = ({dropsidebar }) => {
             return;
           }
   
-          const response = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
+          const response = await fetch('https://web-production-3ff4.up.railway.app/api/account/dashboard', {
             headers: {
               'Authorization': `Token ${token}`
             }
@@ -52,7 +52,6 @@ const AccountNav = ({dropsidebar }) => {
       
       <div className="accountNavWrapper">
         <div className="left"><img src={logos} alt="logo" /></div>
-        {/* <div onClick={dropsidebar} className='menubardrop'><GiHamburgerMenu style={{color: '#fff', fontSize: '24px'}} /></div> */}
             <div onClick={dropsidebar} className='menubardrop'>
       <GiHamburgerMenu style={{ color: '#fff', fontSize: '24px' }} />
     </div>

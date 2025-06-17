@@ -14,9 +14,6 @@ import jean from '../assets/homepage/Jeanne-Kucey-1cc4893a.webp'
 import kristi from '../assets/homepage/kristi-9c94ba5d.webp'
 
 
-// import Four from '../assets/carousel/Four.webp'
-// import five from '../assets/carousel/five.webp'
-
 const Homepage = () => {
 
   const navigate = useNavigate();

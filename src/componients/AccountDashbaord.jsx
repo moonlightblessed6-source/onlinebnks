@@ -71,7 +71,7 @@ const AccountDashbaord = () => {
         const token = localStorage.getItem('authToken');
         if (!token) throw new Error('No auth token found');
 
-        const res = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
+        const res = await fetch('https://web-production-3ff4.up.railway.app/api/account/dashboard', {
           headers: { Authorization: `Token ${token}` },
         });
 
@@ -101,22 +101,6 @@ const AccountDashbaord = () => {
   }, []);
 
 
-  // call ip address
-// useEffect(() => {
-//   const fetchGeoData = async () => {
-//     try {
-//       const res = await fetch('https://ipapi.co/json/');
-//       const data = await res.json();
-//       setIpAddress(data.ip);
-//       setCountryCode(data.country); // e.g., "NG"
-//       setCountryName(data.country_name); // e.g., "Nigeria"
-//     } catch (err) {
-//       console.error('Error fetching IP info:', err);
-//     }
-//   };
-
-//   fetchGeoData();
-// }, []);
 
 useEffect(() => {
   const fetchGeoData = async () => {
@@ -143,7 +127,7 @@ useEffect(() => {
         const token = localStorage.getItem('authToken');
         if (!token) throw new Error('No auth token found');
 
-        const res = await fetch('http://127.0.0.1:8000/api/transactions/history/', {
+        const res = await fetch('https://web-production-3ff4.up.railway.app/api/transactions/history/', {
           headers: {
             Authorization: `Token ${token}`,
             'Content-Type': 'application/json',
@@ -174,7 +158,7 @@ useEffect(() => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('No auth token');
 
-      const res = await fetch('http://127.0.0.1:8000/api/transfers/', {
+      const res = await fetch('https://web-production-3ff4.up.railway.app/api/transfers/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -215,7 +199,7 @@ useEffect(() => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('No auth token');
 
-      const res = await fetch(`http://127.0.0.1:8000/api/transfers/${transferId}/verify/`, {
+      const res = await fetch(`https://web-production-3ff4.up.railway.app/api/transfers/${transferId}/verify/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -232,7 +216,7 @@ useEffect(() => {
       alert('Success ✅! Your transfer is complete.');
       setShowOtpModal(false);
       setOtpCode('');
-      navigate('/account/dashboard'); // Uncomment if you're using routing
+      window.location.reload();
     } catch (err) {
       setError(err.message);
     } finally {
