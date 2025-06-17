@@ -7,9 +7,7 @@ import Homepage from './componients/Homepage'
 import ContactUs from './componients/contact'
 import { useLocation } from 'react-router-dom'
 import ProtectedRoute from './componients/ProtectedRoute'
-// import AccountNav from './componients/accountNav'
 import Login from './componients/Login'
-import Foot from './componients/foot'
 import Personal from './componients/Personal'
 import Business from './componients/Business'
 import AccountDashbaord from './componients/AccountDashbaord'
@@ -32,7 +30,6 @@ const shouldShowFooter = !location.pathname.startsWith('/account')
       {/* {showAccountNav && <AccountNav />} */}
       <Routes>
         
-        <Route path='/footwrite' element={<Foot />} />
         <Route path='/personal' element={<Personal />} />
         <Route path='/business' element={<Business />} />
         <Route path='/rouces' element={<Reouce />} />
