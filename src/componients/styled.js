@@ -1557,118 +1557,55 @@ button{
 
 
 
-
-
-.tractionhistoty {
-  width: 100%;
-  height: 100%;  /* or use 100vh if you want full viewport height */
-  padding: 10px;
-  box-sizing: border-box;
-  overflow-x: auto; /* allow horizontal scroll if needed */
-  background: whitesmoke;
+.transaction-list {
+  border: 1px solid #ccc;
   border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  font-family: Arial, sans-serif;
+  overflow-x: auto;
 }
 
-.tractionhistoty h2 {
-  margin-bottom: 15px;
-  font-weight: 600;
-  color: #333;
+/* Table-like layout for desktop */
+.transaction-header,
+.transaction-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
 }
 
-.tractionhistoty table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-  table-layout: fixed;
+.transaction-header {
+  font-weight: bold;
+  background-color: #f4f4f4;
 }
 
-.tractionhistoty table thead tr {
-  background-color: #f4f6f8;
-  border-bottom: 2px solid #ddd;
-  /* color: whitesmoke; */
-}
-
-.tractionhistoty table th,
-.tractionhistoty table td {
-  padding: 10px 8px;
-  text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-bottom: 1px solid #eee;
-}
-
-.tractionhistoty table th {
-  font-weight: 600;
-  color: #555;
-}
-
-.tractionhistoty table tbody tr:hover {
-  background-color: #f0f8ff;
-  cursor: pointer;
-}
-
-.tractionhistoty table td:first-child {
-  font-weight: 700;
-}
-
-/* Colors for credit and debit */
-.tractionhistoty table td {
-  color: #444;
-}
-
-.tractionhistoty table td[style*="green"] {
-  color: green;
-}
-
-.tractionhistoty table td[style*="red"] {
-  color: red;
-}
-
-/* Responsive for smaller screens */
+/* 💡 Mobile view (max width 1000px) */
 @media (max-width: 1000px) {
-  .tractionhistoty table,
-  .tractionhistoty table thead,
-  .tractionhistoty table tbody,
-  .tractionhistoty table th,
-  .tractionhistoty table td,
-  .tractionhistoty table tr {
-    display: block;
+  .transaction-header {
+    display: none; /* hide the header on mobile */
   }
 
-  .tractionhistoty table thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-
-  .tractionhistoty table tr {
+  .transaction-row {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #ddd;
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
 
-  .tractionhistoty table td {
-    border: none;
-    position: relative;
-    padding-left: 50%;
-    white-space: normal;
-    text-align: right;
+  .transaction-row > div {
+    margin: 0.25rem 0;
+    color: black;
   }
 
-  .tractionhistoty table td::before {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
-    font-weight: 600;
-    text-align: left;
-    content: attr(data-label);
+  .transaction-row > div::before {
+    content: attr(data-label) ": ";
+    font-weight: bold;
+    color: #444;
   }
 }
+
 
 
 

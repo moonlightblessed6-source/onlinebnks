@@ -307,41 +307,30 @@ useEffect(() => {
         <div className="rightInof">
 
             {currentTab === 'tractionhistoty'  && (
-        <div className="tractionhistoty">
-          <h2>Transaction History</h2>
-          {loading ? (
-            <p>Loading transactions...</p>
-          ) : transactions.length === 0 ? (
-            <p>No transactions found.</p>
-          ) : (
-            <table>
-              <thead>
-                <tr>
-                  <th>Type</th>
-                  <th>Description</th>
-                  <th>Amount</th>
-                  <th>Reference</th>
-                  <th>Purpose</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {transactions.map(tx => (
-                  <tr key={`${tx.transaction_type}-${tx.timestamp}`}>
-                    <td style={{color: tx.transaction_type === 'credit' ? 'green' : 'red'}}>
-                      {tx.transaction_type.toUpperCase()}
-                    </td>
-                    <td>{tx.description}</td>
-                    <td>{tx.amount}</td>
-                    <td>{tx.reference || '-'}</td>
-                    <td>{tx.purpose || '-'}</td>
-                    <td>{new Date(tx.timestamp).toLocaleString()}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
-        </div>
+<div className="transaction-list">
+  <div className="transaction-header">
+    <div>Type</div>
+    <div>Description</div>
+    <div>Amount</div>
+    <div>Reference</div>
+    <div>Purpose</div>
+    <div>Date</div>
+  </div>
+
+  {transactions.map(tx => (
+    <div className="transaction-row" key={`${tx.transaction_type}-${tx.timestamp}`}>
+      <div data-label="Type" style={{ color: tx.transaction_type === 'credit' ? 'green' : 'red' }}>
+        {tx.transaction_type.toUpperCase()}
+      </div>
+      <div data-label="Description">{tx.description}</div>
+      <div data-label="Amount">{tx.amount}</div>
+      <div data-label="Reference">{tx.reference || '-'}</div>
+      <div data-label="Purpose">{tx.purpose || '-'}</div>
+      <div data-label="Date">{new Date(tx.timestamp).toLocaleString()}</div>
+    </div>
+  ))}
+</div>
+
             )}
 
             <div className="paybills">
