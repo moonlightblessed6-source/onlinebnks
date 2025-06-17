@@ -903,6 +903,7 @@ export const Accountnavbar = styled.main`
 padding: 1rem 2rem;
 background-color: #121a27;
 
+  
 
 .left{
     width: 100%;
@@ -917,7 +918,7 @@ background-color: #121a27;
     justify-content: center;
     align-items: center;
     margin: auto;
-
+  
 }
 
 a{
@@ -1900,8 +1901,10 @@ button{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1rem;
-    border: 0.3px solid lightgray;
+    /* border: 0.3px solid lightgray; */
     border-radius: 4px;
+    box-shadow: 3px 3px 6px;
+    font-size: 20px;
 }
 
 .welcomname{
@@ -1914,4 +1917,192 @@ button{
    padding: 0.4rem 1rem;
    border-radius: 4px;
 }
+
+
+.overviewaccoun{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 4rem;
+  
+}
+
+.secondboxcheck{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.trs{
+    display: flex;
+    justify-content: space-between;
+}
+
+.na{
+    border-radius: 100%;
+    height: 90px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b131d;
+    font-size: 30px;
+    margin-bottom: 3.6rem;
+}
+
+.boxsz{
+    flex: 1;
+    display: flex;
+    border-radius: 8px;
+    margin-top: 1rem;
+    gap: 4rem;
+    background-color: #0a3071;
+    width: 400px;
+    padding: 1rem 1rem;
+
+}
+
+.seconbox{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    /* padding: 2rem 2rem; */
+}
+
+.checkingbox{
+    display: flex;
+    flex-direction: column;
+    padding: 1.7rem 1rem;
+    gap: 10px;
+    margin-block: 1rem;
+    border-radius: 14px;
+    background-color: #0d141e;
+}
+
+.loadns{
+  display: flex;
+  gap: 1rem;
+}
+
+.loadns>div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.8rem 1rem;
+    gap: 10px;
+    border-radius: 14px;
+    background-color: #0d141e;
+}
+
+
+.bittons {
+    display: flex;
+    width: 500px;
+    margin: 3rem auto;
+    box-shadow: 4px 4px 8px;
+    padding: 2rem;
+}
+
+.bittons > div {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+   background: linear-gradient(59deg, green 50%, red 50%);
+    margin: 3rem auto;
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+    .leftSideBar{
+        display: none;
+    }
+
+
+  .overviewaccoun {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+  }
+
+  .secondboxcheck {
+      flex: 1;
+      flex-direction: column;
+  }
+
+  .trs {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .na {
+      height: 70px;
+      width: 70px;
+      font-size: 24px;
+      margin-bottom: 2rem;
+      margin-bottom: 0rem;
+  }
+
+  .boxsz {
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+  }
+
+  .seconbox {
+      gap: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 20px;
+  }
+
+  .checkingbox {
+      padding: 1rem;
+      gap: 8px;
+      margin-block: 1rem;
+  }
+
+  .loadns {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .loadns > div {
+      padding: 1.2rem;
+  }
+
+  .bittons {
+      flex-direction: column;
+      width: 100%;
+      padding: 1rem;
+      box-shadow: none;
+      align-items: center;
+  }
+
+  .bittons > div {
+      height: 120px;
+      width: 120px;
+      margin: 1rem 0;
+      background: linear-gradient(59deg, green 50%, red 50%);
+  }
+
+  .headerss{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .atag{
+    font-size: 14px;
+    margin-top: 2rem;
+  }
+}
+
+
+
 `

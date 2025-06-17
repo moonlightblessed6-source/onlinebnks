@@ -8,6 +8,8 @@ import { BiSupport, BiTransfer } from "react-icons/bi";
 import { RiLuggageDepositFill } from "react-icons/ri";
 import { IoIosSend, IoIosLogOut } from "react-icons/io";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaCircle } from "react-icons/fa";
+
 
 
 
@@ -32,6 +34,12 @@ const AccountDashbaord = () => {
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState(null);
+  const [currentDate, setCurrentDime] = useState('')
+
+  const [ipAddress, setIpAddress] = useState('');
+  const [countryCode, setCountryCode] = useState('');
+  const [countryName, setCountryName] = useState('');
+
 
   const [receiverAccount, setReceiverAccount] = useState('');
   const [receiverName, setReceiverName] = useState('');
@@ -69,7 +77,10 @@ const AccountDashbaord = () => {
         setBalance(account?.balance);
         setAccountNumber(account?.account_number);
         setUserData(account);
-        setCurrentTime(new Date(data.current_time).toLocaleTimeString());
+        // setCurrentTime(new Date(data.current_time).toLocaleTimeString());
+       const datetime = new Date(data.current_time);
+       setCurrentTime(datetime.toLocaleTimeString());
+       setCurrentDime(datetime.toLocaleDateString());
       } catch (err) {
         console.error(err);
       }
@@ -77,6 +88,25 @@ const AccountDashbaord = () => {
 
     fetchDashboard();
   }, []);
+
+
+  // call ip address
+useEffect(() => {
+  const fetchGeoData = async () => {
+    try {
+      const res = await fetch('https://ipapi.co/json/');
+      const data = await res.json();
+      setIpAddress(data.ip);
+      setCountryCode(data.country); // e.g., "NG"
+      setCountryName(data.country_name); // e.g., "Nigeria"
+    } catch (err) {
+      console.error('Error fetching IP info:', err);
+    }
+  };
+
+  fetchGeoData();
+}, []);
+
 
   // ✅ Fetch transaction history
   useEffect(() => {
@@ -171,10 +201,10 @@ const AccountDashbaord = () => {
         throw new Error(errorData.detail || 'OTP verification failed');
       }
 
-      alert('Transfer verified and completed!');
+      alert('Success ✅! Your transfer is complete.');
       setShowOtpModal(false);
       setOtpCode('');
-      // navigate('/account'); // Uncomment if you're using routing
+      navigate('/account/dashboard'); // Uncomment if you're using routing
     } catch (err) {
       setError(err.message);
     } finally {
@@ -186,6 +216,7 @@ const AccountDashbaord = () => {
   if (!userData) {
     return <div>Loading...</div>;
   }
+
 
 
 //   logout
@@ -200,6 +231,9 @@ const AccountDashbaord = () => {
   }
 
 
+  const billpayment = () => {
+    alert('Please contact support to activate your bill payment service.')
+  }
 
 
 
@@ -220,7 +254,7 @@ const AccountDashbaord = () => {
             
             <div className='btndv'>
               <Link onClick={() => setCurrentTab('transfermoney')}><button style={{backgroundColor: '#2c3ee8'}}><FaMoneyBillTransfer /> TRANSFER</button></Link>
-              <Link><button style={{backgroundColor: '#d43438'}}><LiaHornbill /> PAY BILLS</button></Link>
+              <Link onClick={billpayment}><button style={{backgroundColor: '#d43438'}}><LiaHornbill /> PAY BILLS</button></Link>
             </div>
             </div>
 
@@ -296,16 +330,75 @@ const AccountDashbaord = () => {
                 </div>
                 <div className='atag'>
                    <Link style={{backgroundColor: '#353eff'}}>Deposit <FaLongArrowAltRight /></Link>
-                   <Link style={{backgroundColor: '#39475e'}}>Transfer Fund <FaLongArrowAltRight /></Link>
+                   <Link style={{backgroundColor: '#39475e'}} onClick={() => setCurrentTab('transfermoney')}>Transfer Fund <FaLongArrowAltRight /></Link>
                 </div>
             </div>
 
-            <div className="overviewaccounts">
-              <div className="hessds">
-                <span>Overview</span>
-                <span>Checking Account</span>
+            <div className="overviewaccoun">
+              <div>
+                
+                <span style={{fontSize: '20px'}}>Overview</span>
+
+               <div className="boxsz">
+                <div className='seconbox'>
+                  <div className='na'>NA</div>
+                  
+                  <div>
+                  <span>Last Login</span><br />
+                  <span> {currentDate}</span><br />
+                  <span> {currentTime}</span>
+                  </div>
+                </div>
+
+                <div className='seconbox'>
+                 <span>Available balance</span>
+                 <div style={{display: 'flex', flexDirection: 'column', fontSize: '30px'}}>
+                  <span><strong>USD</strong></span>
+                 <span>${balance != null ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) : '0.00'}</span>
+                 </div>
+                 <span>{name}</span>
+                 <span>login ip address</span>
+                 <span>{ipAddress} — {countryName}{' '}
+                 <img src={`https://flagcdn.com/24x18/${countryCode.toLowerCase()}.png`} alt={countryName} style={{ marginLeft: '8px' }}/></span>
+                 
+                </div>
+
+               </div>
+
               </div>
+
+
+              <div className='secondboxcheck'>
+                <div className='trs'><span style={{fontSize: '20px'}}>Checking Account</span> <span style={{color: '#224999', fontWeight: '900', fontSize: '15px', cursor: 'pointer'}} onClick={() => setCurrentTab('transfermoney')}>Transfer Funds</span></div>
+                <div className="checkingbox">
+                  <span> Checking*** {accountNumber}</span>
+                  <span>${balance != null ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) : '0.00'}</span>
+                </div>
+                <div className='trs'><span style={{fontSize: '20px'}}>Loans and lines of credit</span> <span onClick={billpayment} style={{color: '#224999', fontWeight: '900',fontSize: '15px', cursor: 'pointer'}}>Pay bills</span></div>
+                <div className="loadns">
+                  <div>
+                    <span>Business Support</span>
+                    <span>+10,000 USD</span>
+                  </div>
+                  <div>
+                  <span>FICO Credit Score</span>
+                  <span>814 <FaCircle  style={{color: 'green'}}/></span>
+                  </div>
+                </div>
+              </div>
+
             </div>
+
+
+            <div className="bittons">
+              <span><FaCircle style={{color: 'green'}}/> Credit</span>
+              <div>
+
+              </div>
+              <span><FaCircle style={{color: 'red'}}/> Debit</span>
+            </div>
+
+
 
             </div>
          )}
