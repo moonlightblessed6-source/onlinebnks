@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom'
 import logos from '../assets/logo/logos.png'
 import {Accountnavbar} from './styled'
 import { MdAccountCircle } from "react-icons/md";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 
-const AccountNav = () => {
+
+const AccountNav = ({dropsidebar }) => {
 
   const [name, setName] = useState('');
 
@@ -45,9 +47,15 @@ const AccountNav = () => {
     }, []);
 
   return (
+    
     <Accountnavbar>
+      
       <div className="accountNavWrapper">
         <div className="left"><img src={logos} alt="logo" /></div>
+        {/* <div onClick={dropsidebar} className='menubardrop'><GiHamburgerMenu style={{color: '#fff', fontSize: '24px'}} /></div> */}
+            <div onClick={dropsidebar} className='menubardrop'>
+      <GiHamburgerMenu style={{ color: '#fff', fontSize: '24px' }} />
+    </div>
 
         <div className="rigt">
          

@@ -824,19 +824,27 @@ button{
 
 @media screen and (max-width: 1000px) {
 
-     .tractionhistoty {
-    padding: 10px;
-    overflow-x: auto; /* allow horizontal scroll for table */
-  }
+    .tractionhistoty {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  overflow-x: auto; /* allow horizontal scroll for table */
+  box-sizing: border-box; /* include padding in size */
+}
+
+
 
   .tractionhistoty table {
     width: 100%;
     border-collapse: collapse;
     font-size: 14px; /* slightly smaller text */
+     
   }
 
+
   .tractionhistoty table thead tr {
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
+ 
   }
 
   .tractionhistoty table th,
@@ -844,6 +852,7 @@ button{
     padding: 8px 6px;
     white-space: nowrap; /* prevent wrapping inside cells */
     text-align: left;
+
   }
 
 
@@ -920,6 +929,9 @@ background-color: #121a27;
     margin: auto;
   
 }
+.menubardrop{
+    display: none;
+}
 
 a{
     display: flex;
@@ -948,6 +960,9 @@ a{
     .left{
         display: none;
     }
+    .menubardrop{
+    display: block;
+}
     
 }
 
@@ -1610,6 +1625,8 @@ font-family: "Lato", sans-serif;
     gap: 0.5rem;
     
 }
+
+
 .btndv>a>button{
     padding: 0.5rem 0.5rem;
     border: none;
@@ -1639,12 +1656,9 @@ a{
     width: 100%;
 }
 
-.tractionhistoty{
-    display: flex;
-    gap: 2rem;
-    /* column-gap: 2rem; */
-    flex-direction: column;
-}
+
+
+
 
 
 
@@ -1738,32 +1752,116 @@ button{
 
 
 
-@media screen and (max-width: 1000px) {
+.tractionhistoty {
+  width: 100%;
+  height: 100%;  /* or use 100vh if you want full viewport height */
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-x: auto; /* allow horizontal scroll if needed */
+  background: whitesmoke;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
 
-     .tractionhistoty {
-    padding: 10px;
-    overflow-x: auto; /* allow horizontal scroll for table */
-  }
+.tractionhistoty h2 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #333;
+}
 
-  .tractionhistoty table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px; /* slightly smaller text */
+.tractionhistoty table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: fixed;
+}
+
+.tractionhistoty table thead tr {
+  background-color: #f4f6f8;
+  border-bottom: 2px solid #ddd;
+  /* color: whitesmoke; */
+}
+
+.tractionhistoty table th,
+.tractionhistoty table td {
+  padding: 10px 8px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #eee;
+}
+
+.tractionhistoty table th {
+  font-weight: 600;
+  color: #555;
+}
+
+.tractionhistoty table tbody tr:hover {
+  background-color: #f0f8ff;
+  cursor: pointer;
+}
+
+.tractionhistoty table td:first-child {
+  font-weight: 700;
+}
+
+/* Colors for credit and debit */
+.tractionhistoty table td {
+  color: #444;
+}
+
+.tractionhistoty table td[style*="green"] {
+  color: green;
+}
+
+.tractionhistoty table td[style*="red"] {
+  color: red;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 1000px) {
+  .tractionhistoty table,
+  .tractionhistoty table thead,
+  .tractionhistoty table tbody,
+  .tractionhistoty table th,
+  .tractionhistoty table td,
+  .tractionhistoty table tr {
+    display: block;
   }
 
   .tractionhistoty table thead tr {
-    background-color: #f0f0f0;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
   }
 
-  .tractionhistoty table th,
+  .tractionhistoty table tr {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ddd;
+  }
+
   .tractionhistoty table td {
-    padding: 8px 6px;
-    white-space: nowrap; /* prevent wrapping inside cells */
-    text-align: left;
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: right;
   }
 
+  .tractionhistoty table td::before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+    text-align: left;
+    content: attr(data-label);
+  }
 }
-
 
 
 
@@ -2016,8 +2114,15 @@ button{
 
 @media screen and (max-width: 1000px) {
 
+    .dashboardwrapper{
+        position: relative;
+    }
     .leftSideBar{
-        display: none;
+        position: absolute;
+        width: 75%;
+        background-color: #252c38;
+        height: 100%;
+        z-index: 500;
     }
 
 

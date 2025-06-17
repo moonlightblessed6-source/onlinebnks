@@ -9,6 +9,7 @@ import { RiLuggageDepositFill } from "react-icons/ri";
 import { IoIosSend, IoIosLogOut } from "react-icons/io";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaCircle } from "react-icons/fa";
+import AccountNav from './accountNav'
 
 
 
@@ -40,6 +41,9 @@ const AccountDashbaord = () => {
   const [countryCode, setCountryCode] = useState('');
   const [countryName, setCountryName] = useState('');
 
+  // menubar
+ const [meuedrop, setMeueDrop] = useState(false);
+ const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const [receiverAccount, setReceiverAccount] = useState('');
   const [receiverName, setReceiverName] = useState('');
@@ -52,6 +56,13 @@ const AccountDashbaord = () => {
   const [transferId, setTransferId] = useState(null);
   const [error, setError] = useState('');
   const navigate = useNavigate(); 
+
+  // set how to show
+  useEffect(() => {
+  const handleResize = () => setWindowWidth(window.innerWidth);
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
 
   // ✅ Fetch dashboard + user data in ONE call
   useEffect(() => {
@@ -91,14 +102,30 @@ const AccountDashbaord = () => {
 
 
   // call ip address
+// useEffect(() => {
+//   const fetchGeoData = async () => {
+//     try {
+//       const res = await fetch('https://ipapi.co/json/');
+//       const data = await res.json();
+//       setIpAddress(data.ip);
+//       setCountryCode(data.country); // e.g., "NG"
+//       setCountryName(data.country_name); // e.g., "Nigeria"
+//     } catch (err) {
+//       console.error('Error fetching IP info:', err);
+//     }
+//   };
+
+//   fetchGeoData();
+// }, []);
+
 useEffect(() => {
   const fetchGeoData = async () => {
     try {
-      const res = await fetch('https://ipapi.co/json/');
+      const res = await fetch('https://api.db-ip.com/v2/free/self');
       const data = await res.json();
-      setIpAddress(data.ip);
-      setCountryCode(data.country); // e.g., "NG"
-      setCountryName(data.country_name); // e.g., "Nigeria"
+      setIpAddress(data.ipAddress);
+      setCountryCode(data.countryCode);
+      setCountryName(data.countryName);
     } catch (err) {
       console.error('Error fetching IP info:', err);
     }
@@ -106,6 +133,7 @@ useEffect(() => {
 
   fetchGeoData();
 }, []);
+
 
 
   // ✅ Fetch transaction history
@@ -235,12 +263,23 @@ useEffect(() => {
     alert('Please contact support to activate your bill payment service.')
   }
 
+  
+
+
+  const dropsidebar = () => {
+    setMeueDrop(prev => !prev);
+  }
+
 
 
   return (
+    
     <DashbaordAcccount>
+       <AccountNav dropsidebar={dropsidebar} />
+      
       <div className="dashboardwrapper">
-
+        
+       {(windowWidth >= 1000 || meuedrop) && (
         <div className="leftSideBar">
             <div className='balance'>
             <span>AVAILABLE BALANCE</span>
@@ -253,8 +292,8 @@ useEffect(() => {
           <span id='time'><strong>Current Time: {currentTime || '--:--'}</strong></span>
             
             <div className='btndv'>
-              <Link onClick={() => setCurrentTab('transfermoney')}><button style={{backgroundColor: '#2c3ee8'}}><FaMoneyBillTransfer /> TRANSFER</button></Link>
-              <Link onClick={billpayment}><button style={{backgroundColor: '#d43438'}}><LiaHornbill /> PAY BILLS</button></Link>
+              <Link onClick={() => {setCurrentTab('transfermoney'); setMeueDrop(false);}}><button style={{backgroundColor: '#2c3ee8'}}><FaMoneyBillTransfer /> TRANSFER</button></Link>
+              <Link onClick={() => { billpayment(); setMeueDrop(false); }}><button style={{backgroundColor: '#d43438'}}><LiaHornbill /> PAY BILLS</button></Link>
             </div>
             </div>
 
@@ -262,12 +301,12 @@ useEffect(() => {
               
               <div className='linkbtn'>
                 <h6>MENU</h6>
-               <Link onClick={() => setCurrentTab('Dashboard')}><button> <MdOutlineDashboard /> Dashboard</button></Link>
-               <Link onClick={() => setCurrentTab('profile')}><button><MdManageAccounts /> My Account</button></Link>
+               <Link onClick={() => {setCurrentTab('Dashboard'); setMeueDrop(false);}}><button> <MdOutlineDashboard /> Dashboard</button></Link>
+               <Link onClick={() => {setCurrentTab('profile'); setMeueDrop(false);}}><button><MdManageAccounts /> My Account</button></Link>
               </div>
-              <Link onClick={() => setCurrentTab('tractionhistoty')}><MdOutlineHistoryToggleOff /> Transaction History</Link>
-              <Link onClick={() => setCurrentTab('transfermoney')}><IoIosSend /> Send Money</Link>
-              <Link onClick={() => setCurrentTab('transfermoney')}><BiTransfer /> International Wire Transfer</Link>
+              <Link onClick={() => {setCurrentTab('tractionhistoty'); setMeueDrop(false);}}><MdOutlineHistoryToggleOff /> Transaction History</Link>
+              <Link onClick={() => {setCurrentTab('transfermoney'); setMeueDrop(false);}}><IoIosSend /> Send Money</Link>
+              <Link onClick={() => {setCurrentTab('transfermoney'); setMeueDrop(false);}}><BiTransfer /> International Wire Transfer</Link>
               <Link onClick={depositcheck}><RiLuggageDepositFill /> Depoit Check</Link>
               <Link onClick={handlelogout}><IoIosLogOut /> Logout</Link>
               <Link to='/contact'><BiSupport /> Support</Link>
@@ -276,6 +315,10 @@ useEffect(() => {
         
 
         </div>
+       )}
+
+       
+
 
         <div className="rightInof">
 
@@ -329,7 +372,7 @@ useEffect(() => {
                     <span>At a glance summary of your account!</span>
                 </div>
                 <div className='atag'>
-                   <Link style={{backgroundColor: '#353eff'}}>Deposit <FaLongArrowAltRight /></Link>
+                   <Link style={{backgroundColor: '#353eff'}} onClick={depositcheck}>Deposit <FaLongArrowAltRight /></Link>
                    <Link style={{backgroundColor: '#39475e'}} onClick={() => setCurrentTab('transfermoney')}>Transfer Fund <FaLongArrowAltRight /></Link>
                 </div>
             </div>
@@ -354,7 +397,7 @@ useEffect(() => {
                  <span>Available balance</span>
                  <div style={{display: 'flex', flexDirection: 'column', fontSize: '30px'}}>
                   <span><strong>USD</strong></span>
-                 <span>${balance != null ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) : '0.00'}</span>
+                 <span>$&nbsp;{balance != null ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) : '0.00'}</span>
                  </div>
                  <span>{name}</span>
                  <span>login ip address</span>
@@ -371,18 +414,18 @@ useEffect(() => {
               <div className='secondboxcheck'>
                 <div className='trs'><span style={{fontSize: '20px'}}>Checking Account</span> <span style={{color: '#224999', fontWeight: '900', fontSize: '15px', cursor: 'pointer'}} onClick={() => setCurrentTab('transfermoney')}>Transfer Funds</span></div>
                 <div className="checkingbox">
-                  <span> Checking*** {accountNumber}</span>
-                  <span>${balance != null ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) : '0.00'}</span>
+                  <span> Checking&nbsp;&nbsp; {accountNumber}</span>
+                  <span>$&nbsp;{balance != null ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) : '0.00'}</span>
                 </div>
                 <div className='trs'><span style={{fontSize: '20px'}}>Loans and lines of credit</span> <span onClick={billpayment} style={{color: '#224999', fontWeight: '900',fontSize: '15px', cursor: 'pointer'}}>Pay bills</span></div>
                 <div className="loadns">
                   <div>
                     <span>Business Support</span>
-                    <span>+10,000 USD</span>
+                    <span>+&nbsp;&nbsp;10,000 USD</span>
                   </div>
                   <div>
                   <span>FICO Credit Score</span>
-                  <span>814 <FaCircle  style={{color: 'green'}}/></span>
+                  <span>814&nbsp;&nbsp;<FaCircle  style={{color: 'green'}}/></span>
                   </div>
                 </div>
               </div>

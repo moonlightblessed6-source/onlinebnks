@@ -7,7 +7,7 @@ import Homepage from './componients/Homepage'
 import ContactUs from './componients/contact'
 import { useLocation } from 'react-router-dom'
 import ProtectedRoute from './componients/ProtectedRoute'
-import AccountNav from './componients/accountNav'
+// import AccountNav from './componients/accountNav'
 import Login from './componients/Login'
 import Foot from './componients/foot'
 import Personal from './componients/Personal'
@@ -22,14 +22,14 @@ function App() {
 const location = useLocation()
 const shouldShowFooter = !location.pathname.startsWith('/account')
 
-const showAccountNav = location.pathname.startsWith('/account')
+// const showAccountNav = location.pathname.startsWith('/account')
 
 
 
   return (
      <>
       {!location.pathname.startsWith('/account') && <Nav />}
-      {showAccountNav && <AccountNav />}
+      {/* {showAccountNav && <AccountNav />} */}
       <Routes>
         
         <Route path='/footwrite' element={<Foot />} />
