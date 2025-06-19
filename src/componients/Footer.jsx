@@ -70,7 +70,8 @@ const Footer = () => {
         </div>
       </div>
 
-         <div className="wedobsiness">
+       <div className="wrapelastfooter">
+          <div className="wedobsiness">
           <img src={cdfi} alt="cdfi" />
           <img src={fheo} alt="fheo" />
           <img src={ncua} alt="ncua" />
@@ -78,6 +79,7 @@ const Footer = () => {
         <div>
           <p className='mrp'>We do business in accordance with the Federal Fair Housing Law and Equal Credit Opportunity Act.</p>
         </div>
+       </div>
     </Footers>
   )
 }

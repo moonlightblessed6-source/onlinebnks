@@ -16,7 +16,7 @@ const Login = () => {
     setLoading(true); //
 
     try {
-      const response = await fetch('https://web-production-3ff4.up.railway.app/api/login/', {
+      const response = await fetch('http://127.0.0.1:8000/api/login/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,9 +33,26 @@ const Login = () => {
 
       // Save token to localStorage (or context/state)
       localStorage.setItem('authToken', data.token);
+    
+      const userResponse = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
+  headers: {
+    'Authorization': `Token ${data.token}`,  // note: use 'Token' prefix, not 'Bearer', since your dashboard fetch uses 'Token'
+  },
+});
 
-      alert('Login successful!');
-      navigate('/account/dashboard');
+if (!userResponse.ok) {
+  throw new Error('Failed to fetch user profile');
+}
+
+const userData = await userResponse.json();
+
+const account = userData.account || {};
+const firstName = account.first_name || '';
+const lastName = account.last_name || '';
+
+alert(`${firstName} ${lastName} welcome!`.trim());
+
+navigate('/account/dashboard');
       // No need to reload, just navigate
     } catch (err) {
       setError(err.message);

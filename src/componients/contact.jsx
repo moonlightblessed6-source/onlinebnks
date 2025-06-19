@@ -2,8 +2,8 @@ import React from 'react'
 import {ContactUs} from './styled'
 import { Link } from 'react-router-dom'
 import { IoIosArrowForward } from "react-icons/io";
-import { MdPhoneCallback } from "react-icons/md";
-import { IoChatboxOutline } from "react-icons/io5";
+// import { MdPhoneCallback } from "react-icons/md";
+// import { IoChatboxOutline } from "react-icons/io5";
 
 
 
@@ -18,52 +18,52 @@ const contact = () => {
             <Link>Contact Us</Link>
          </div>
         </div>
-        <div className="form">
-            <h2>Contact</h2>
-            <div className='contactwrapers'>
-                <div>
-                    <p>Hard of hearing</p>
-                    <p>For all account types</p>
-                </div>
-                <div>
-                    <div className='cals'>
-                        <div><MdPhoneCallback style={{fontSize: '23px'}}/> </div>
-                         <div>
-                         <p> Call</p>
-                        <p>General</p>
-                         </div>
-                    </div>
-                <p>711</p>
-                <p>Have the phone number you’re trying to reach ready</p>
-                </div>
+        </div>
+      
+      
+        <div className="contactus">
+          
+          <div className='contactwrapper'>
+            <h1><span style={{ color: '#007cba'}}><strong>Email</strong></span> Us</h1>
+            <div>
 
+            <p><strong>Member Services: </strong><span style={{ color: '#5a7cba'}}>info@fcujetscreem.org</span></p>
+            <p><strong>Loans: </strong><span style={{ color: '#5a7cba'}}>lending@fcujetscreem.org</span></p>
+            <p><strong>Human Resources: </strong><span style={{ color: '#5a7cba'}}>humanresources@fcujetscreem.org</span></p>
             </div>
-        </div>
-      </div>
-      <hr />
+            <h1><span style={{ color: '#007cba'}}><strong>Call</strong></span> Us</h1>
+            <div>
+            <p><strong>Telephone number: </strong><span>(667) 493-9316 </span></p>
+            <ul>
+              <li>To <span style={{color: '#eb6852'}}>report a lost or stolen Debit or ATM Card</span>, please contact our 24 hour hotline at <strong>1-667-493-9316.</strong></li>
+            <li>To <span style={{color: '#eb6852'}}>change your PIN on your Debit or ATM Card</span>, call <strong>1-667-493-9316.</strong></li>
+            <li>If you receive a call from our monitoring department that your <span style={{color: '#eb6852'}}> card is blocked for irregular activity</span>, please call <strong>1-667-493-9316.</strong></li>
+            </ul>
+            </div>
+            <h1><span style={{ color: '#007cba'}}><strong>Write</strong></span> Us</h1>
+            <div>
+           <p><strong>JetStream Federal Credit Union </strong></p>
+           <span>P.O. Box 5487 </span>
+           <span>Miami Lakes, FL 33014-1487</span>
+            </div>
 
-      <div className='bank'>
-       <div>
-        <h2>Bank</h2>
-       </div>
-       <div style={{display: 'flex', gap: '0.4rem', alignItems: 'center'}}>
-        <div><IoChatboxOutline style={{fontSize: '23px'}} /></div>
-        <div>
-        <p>Chat</p>
-        <span><Link>Login</Link> To Chat</span>
+          </div>
+
+
+{/* ============================== */}
+          <div className='lasrtcon'>
+            <h2>More About JetStream</h2>
+            <ul>
+              <li><Link to='/about'>About JetStream FCU</Link></li>
+              <li>Board of Directors</li>
+              <li>Senior Management</li>
+              <li>Annual Reports</li>
+              <li>Press Releases</li>
+              <li>Observed Holidays</li>
+            </ul>
+          </div>
         </div>
-       </div>
-       <div style={{display: 'flex', gap: '0.4rem', alignItems: 'center'}}>
-        <div><MdPhoneCallback style={{fontSize: '23px'}} /></div>
-        <div>
-        <p>Call</p>
-        <p>1-877-247-2559</p>
-        <p>Open 24/7</p>
-        <h4>Outside the U.S.</h4>
-        <p>+1-757-247-2559</p>
-        </div>
-       </div>
-      </div>
+
     </ContactUs>
   )
 }

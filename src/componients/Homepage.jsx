@@ -39,7 +39,7 @@ const Homepage = () => {
           )}
         
         {isLogin ? (
-       <Link to='/account/transfer' style={{textDecoration: 'none'}}>Transfer</Link>
+       <Link to='/account/dashboard' style={{textDecoration: 'none'}}>Transfer</Link>
         ):(
         <Link>Enroll Now!</Link>
         )}

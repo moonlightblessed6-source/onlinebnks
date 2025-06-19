@@ -12,6 +12,7 @@ import Personal from './componients/Personal'
 import Business from './componients/Business'
 import AccountDashbaord from './componients/AccountDashbaord'
 import Reouce from './componients/Reouces'
+// import Transact from './componients/transact'
 
 
 
@@ -38,6 +39,7 @@ const shouldShowFooter = !location.pathname.startsWith('/account')
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/account/dashboard' element={<ProtectedRoute><AccountDashbaord /></ProtectedRoute>}/>
+    
 
         
 

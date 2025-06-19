@@ -10,6 +10,7 @@ import { IoIosSend, IoIosLogOut } from "react-icons/io";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaCircle } from "react-icons/fa";
 import AccountNav from './accountNav'
+import cicerfoorer from '../assets/logo/footercicle.png'
 
 
 
@@ -25,18 +26,23 @@ import AccountNav from './accountNav'
 
 const AccountDashbaord = () => {
 
+const [currentTab, setCurrentTab] = useState(() => {
+  return localStorage.getItem('currentTab') || 'Dashboard';
+});
 
+useEffect(() => {
+  localStorage.setItem('currentTab', currentTab);
+}, [currentTab]);
       // ✅ useState declarations (in order)
-  const [currentTab, setCurrentTab] = useState('Dashboard');
+  // const [currentTab, setCurrentTab] = useState('Dashboard');
   const [balance, setBalance] = useState(null);
   const [name, setName] = useState('');
   const [currentTime, setCurrentTime] = useState('');
   const [accountNumber, setAccountNumber] = useState('');
-  const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState(null);
   const [currentDate, setCurrentDime] = useState('')
-
+  const [transactions, setTransactions] = useState([]);
   const [ipAddress, setIpAddress] = useState('');
   const [countryCode, setCountryCode] = useState('');
   const [countryName, setCountryName] = useState('');
@@ -49,6 +55,8 @@ const AccountDashbaord = () => {
   const [receiverName, setReceiverName] = useState('');
   const [receiverBank, setReceiverBank] = useState('');
   const [swiftCode, setSwiftCode] = useState('');
+  const [ibanfild, setIbanFild] = useState('');
+  const [recipientAddress, setRecipientAddress] = useState('');
   const [purpose, setPurpose] = useState('');
   const [amount, setAmount] = useState('');
   const [showOtpModal, setShowOtpModal] = useState(false);
@@ -56,6 +64,43 @@ const AccountDashbaord = () => {
   const [transferId, setTransferId] = useState(null);
   const [error, setError] = useState('');
   const navigate = useNavigate(); 
+
+
+
+
+  // logout
+
+
+  
+  
+  
+            // ✅ Fetch transaction history
+            useEffect(() => {
+              const fetchTransactions = async () => {
+                try {
+                  const token = localStorage.getItem('authToken');
+                  if (!token) throw new Error('No auth token found');
+          
+                  const res = await fetch('http://127.0.0.1:8000/api/transactions/history/', {
+                    headers: {
+                      Authorization: `Token ${token}`,
+                      'Content-Type': 'application/json',
+                    },
+                  });
+          
+                  if (!res.ok) throw new Error('Failed to fetch transactions');
+          
+                  const data = await res.json();
+                  setTransactions(data);
+                } catch (err) {
+                  console.error(err);
+                } finally {
+                  setLoading(false);
+                }
+              };
+          
+              fetchTransactions();
+            }, []);
 
   // set how to show
   useEffect(() => {
@@ -71,7 +116,7 @@ const AccountDashbaord = () => {
         const token = localStorage.getItem('authToken');
         if (!token) throw new Error('No auth token found');
 
-        const res = await fetch('https://web-production-3ff4.up.railway.app/api/account/dashboard', {
+        const res = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
           headers: { Authorization: `Token ${token}` },
         });
 
@@ -101,7 +146,7 @@ const AccountDashbaord = () => {
   }, []);
 
 
-
+// fatch ip and country flag
 useEffect(() => {
   const fetchGeoData = async () => {
     try {
@@ -120,33 +165,7 @@ useEffect(() => {
 
 
 
-  // ✅ Fetch transaction history
-  useEffect(() => {
-    const fetchTransactions = async () => {
-      try {
-        const token = localStorage.getItem('authToken');
-        if (!token) throw new Error('No auth token found');
 
-        const res = await fetch('https://web-production-3ff4.up.railway.app/api/transactions/history/', {
-          headers: {
-            Authorization: `Token ${token}`,
-            'Content-Type': 'application/json',
-          },
-        });
-
-        if (!res.ok) throw new Error('Failed to fetch transactions');
-
-        const data = await res.json();
-        setTransactions(data);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTransactions();
-  }, []);
 
   // ✅ Transfer form submission
   const handleTransferSubmit = async (e) => {
@@ -158,7 +177,7 @@ useEffect(() => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('No auth token');
 
-      const res = await fetch('https://web-production-3ff4.up.railway.app/api/transfers/', {
+      const res = await fetch('http://127.0.0.1:8000/api/transfers/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -199,7 +218,7 @@ useEffect(() => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('No auth token');
 
-      const res = await fetch(`https://web-production-3ff4.up.railway.app/api/transfers/${transferId}/verify/`, {
+      const res = await fetch(`http://127.0.0.1:8000/api/transfers/${transferId}/verify/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -255,7 +274,16 @@ useEffect(() => {
   }
 
 
+  const contactreload = () => {
+    window.location='/contact'
+  }
 
+
+  const help = () => {
+    window.location = '/contact'
+  }
+
+  
   return (
     
     <DashbaordAcccount>
@@ -288,9 +316,9 @@ useEffect(() => {
                <Link onClick={() => {setCurrentTab('Dashboard'); setMeueDrop(false);}}><button> <MdOutlineDashboard /> Dashboard</button></Link>
                <Link onClick={() => {setCurrentTab('profile'); setMeueDrop(false);}}><button><MdManageAccounts /> My Account</button></Link>
               </div>
-              <Link onClick={() => {setCurrentTab('tractionhistoty'); setMeueDrop(false);}}><MdOutlineHistoryToggleOff /> Transaction History</Link>
+              <Link onClick={() => {setCurrentTab('tractionhistoty');setMeueDrop(false);}}><MdOutlineHistoryToggleOff /> Transaction History</Link>
               <Link onClick={() => {setCurrentTab('transfermoney'); setMeueDrop(false);}}><IoIosSend /> Send Money</Link>
-              <Link onClick={() => {setCurrentTab('transfermoney'); setMeueDrop(false);}}><BiTransfer /> International Wire Transfer</Link>
+              <Link onClick={() => {setCurrentTab('Internationaltransfermoney'); setMeueDrop(false);}}><BiTransfer /> International Wire Transfer</Link>
               <Link onClick={depositcheck}><RiLuggageDepositFill /> Depoit Check</Link>
               <Link onClick={handlelogout}><IoIosLogOut /> Logout</Link>
               <Link to='/contact'><BiSupport /> Support</Link>
@@ -306,36 +334,45 @@ useEffect(() => {
 
         <div className="rightInof">
 
-            {currentTab === 'tractionhistoty'  && (
-<div className="transaction-list">
-  <div className="transaction-header">
-    <div>Type</div>
-    <div>Description</div>
-    <div>Amount</div>
-    <div>Reference</div>
-    <div>Purpose</div>
-    <div>Date</div>
-  </div>
-
-  {transactions.map(tx => (
-    <div className="transaction-row" key={`${tx.transaction_type}-${tx.timestamp}`}>
-      <div data-label="Type" style={{ color: tx.transaction_type === 'credit' ? 'green' : 'red' }}>
-        {tx.transaction_type.toUpperCase()}
-      </div>
-      <div data-label="Description">{tx.description}</div>
-      <div data-label="Amount">{tx.amount}</div>
-      <div data-label="Reference">{tx.reference || '-'}</div>
-      <div data-label="Purpose">{tx.purpose || '-'}</div>
-      <div data-label="Date">{new Date(tx.timestamp).toLocaleString()}</div>
-    </div>
-  ))}
-</div>
-
-            )}
-
-            <div className="paybills">
-
-            </div>
+         
+        {currentTab === 'tractionhistoty' && (
+<div className="tractionhistoty">
+          <h2>Transaction History</h2>
+          {loading ? (
+            <p>Loading transactions...</p>
+          ) : transactions.length === 0 ? (
+            <p>No transactions found.</p>
+          ) : (
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Description</th>
+                  <th>Amount</th>
+                  <th>Reference</th>
+                  <th>Purpose</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {transactions.map(tx => (
+                  <tr key={`${tx.transaction_type}-${tx.timestamp}`}>
+                    <td style={{color: tx.transaction_type === 'credit' ? 'green' : 'red'}}>
+                      {tx.transaction_type.toUpperCase()}
+                    </td>
+                    <td>{tx.description}</td>
+                    <td>{tx.amount}</td>
+                    <td>{tx.reference || '-'}</td>
+                    <td>{tx.purpose || '-'}</td>
+                    <td>{new Date(tx.timestamp).toLocaleString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+        )}
+            
 
          {currentTab === 'Dashboard' && (
          <div className="Dashboard">
@@ -369,10 +406,10 @@ useEffect(() => {
                 <div className='seconbox'>
                  <span>Available balance</span>
                  <div style={{display: 'flex', flexDirection: 'column', fontSize: '30px'}}>
-                  <span><strong>USD</strong></span>
-                 <span>$&nbsp;{balance != null ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) : '0.00'}</span>
+                  <span className='usd'><strong>USD</strong></span>
+                 <span className='balacs'><strong>$&nbsp;{balance != null ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) : '0.00'}</strong></span>
                  </div>
-                 <span>{name}</span>
+                 <span><strong>{name}</strong></span>
                  <span>login ip address</span>
                  <span>{ipAddress} — {countryName}{' '}
                  <img src={`https://flagcdn.com/24x18/${countryCode.toLowerCase()}.png`} alt={countryName} style={{ marginLeft: '8px' }}/></span>
@@ -406,14 +443,51 @@ useEffect(() => {
             </div>
 
 
+             <div className="lastbutton">
+               
+               <div className='charts'>
+                 <div className='flexthem'>
+                  <div className='styhere'>
+                  <span><strong>FIR/LWGWSVT8-0625</strong></span>
+                 <span>{currentDate} {currentTime}</span>
+                 <span style={{color: '#1b49c0', fontWeight: '900'}}>$592813 WIRE TRF to Account...3833</span>
+                 </div>
+                 <div className='styOne'>
+                  <span>Amount</span>
+                 <span style={{color: '#53ebc8', fontWeight: '700'}}>+781218.50 Credit</span>
+                 <span style={{color: '#53ebc8', fontWeight: '700'}}>USD</span>
+                 <span style={{color: '#53ebc8', fontWeight: '700'}}>Completed</span>
+                 </div>
+                 </div>
+
+                 <div className='flexthem'>
+                  <div className='styhere'>
+                  <span><strong>FIR/J5AJGDLEJ-0625</strong></span>                
+                 <span>{currentDate} {currentTime}</span>
+                 <span style={{color: '#1b49c0', fontWeight: '900'}}>Funds Transfer Lerch B LLC to Account...9823</span>
+                   
+                  </div>
+                   <div className='styOne'>
+                    <span>Amount</span>
+                    <span style={{color: 'red', fontWeight: '700'}}>- 8900.00 Debit</span>
+                 <span style={{color: 'red', fontWeight: '700'}}>USD</span>
+                 <span style={{color: '#53ebc8', fontWeight: '700'}}>Completed</span>
+                   </div>
+                 </div>
+               </div>
+
             <div className="bittons">
-              <span><FaCircle style={{color: 'green'}}/> Credit</span>
-              <div>
+                <div className='colorscircl'>
+                <span><FaCircle style={{color: 'green'}}/> Credit</span>
+              <span><FaCircle style={{color: 'red'}}/> Debit</span>
+                </div>
+              <div className='circles'>
 
               </div>
-              <span><FaCircle style={{color: 'red'}}/> Debit</span>
+              
             </div>
 
+             </div>
 
 
             </div>
@@ -422,7 +496,7 @@ useEffect(() => {
 
          {currentTab === 'profile' && (
         <div className="profilewrapper">
-
+         <span style={{color: 'red', fontSize: '20px', cursor: 'pointer'}} onClick={handlelogout}>Logout</span>
         <div className="basicinfo">
           <span>Basic Info</span>
         </div>
@@ -503,9 +577,13 @@ useEffect(() => {
                         <input type="text" value={receiverBank} onChange={(e) => setReceiverBank(e.target.value)} required />
                       </div>
                       <div>
-                        <label>SWIFT code</label>
+                        <label>Routing Number</label>
                         <input type="text" value={swiftCode} onChange={(e) => setSwiftCode(e.target.value)} />
                       </div>
+                                <div>
+            <label>Recipient Address</label>
+            <input type="text" value={recipientAddress} onChange={(e) => setRecipientAddress(e.target.value)} />
+          </div>
                       <div>
                         <label htmlFor="purpose">Purpose of transfer</label>
                         <input
@@ -580,12 +658,158 @@ useEffect(() => {
 
 
 
+        {currentTab === 'Internationaltransfermoney'  && (
+                  <div className="profilewrapper">
+                    <h3>Transfer</h3>
+        
+            
+                    <div className="amounr">
+                      <p><strong>Balance</strong></p>
+                      <div className="amount">
+                        <span><strong style={{ fontSize: '25px' }}>
+                          {/* ${parseFloat(balance).toFixed(2)} */}
+                                        ${balance != null 
+              ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) 
+              : '0.00'}
+                          </strong></span>
+                      </div>
+                    </div>
+            
+                    <form onSubmit={handleTransferSubmit}>
+                      <div>
+                        <label>From Account</label>
+                        <input type="text" style={{backgroundColor: 'white', color: 'black'}} value={accountNumber} disabled />
+                      </div>
+                      <div>
+                        <label>Beneficiary Account Number</label>
+                        <input type="text" value={receiverAccount} onChange={(e) => setReceiverAccount(e.target.value)} required />
+                      </div>
+                      <div>
+                        <label>IBAN</label>
+                     <input type="text" value={ibanfild} onChange={(e) => setIbanFild(e.target.value)}/>
+                      </div>
+                      <div>
+                        <label>Beneficiary Name</label>
+                        <input type="text" value={receiverName} onChange={(e) => setReceiverName(e.target.value)} required />
+                      </div>
+                      <div>
+                        <label>Beneficiary Bank Name</label>
+                        <input type="text" value={receiverBank} onChange={(e) => setReceiverBank(e.target.value)} required />
+                      </div>
+                      <div>
+                        <label>SWIFT/BIC Code	</label>
+                        <input type="text" value={swiftCode} onChange={(e) => setSwiftCode(e.target.value)} />
+                      </div>
+                      <div>
+                      <label>Bank Address</label>
+                      <input type="text" value={recipientAddress} onChange={(e) => setRecipientAddress(e.target.value)} />
+                      </div>
+                      <div>
+                        <label htmlFor="purpose">Transfer Purpose / Reason</label>
+                        <input
+                          type="text"
+                          id="purpose"
+                          placeholder="e.g., Rent, Tuition, Gift"
+                          value={purpose}
+                          onChange={(e) => setPurpose(e.target.value)}
+                        />
+                      </div>
+                      <div>
+                        <label>Amount to Transfer</label>
+                        <input
+                          type="number"
+                          min="0"
+                          step="0.01"
+                          value={amount}
+                          onChange={(e) => setAmount(e.target.value)}
+                          required
+                        />
+                      </div>
+                      <div>
+                        <button type="submit" disabled={loading}>
+                          {loading ? 'Processing...' : 'Transfer'}
+                        </button>
+                      </div>
+                      {error && <p style={{ color: 'red' }}>{error}</p>}
+                    </form>
+            
+                    {/* 🔐 OTP Modal */}
+                    {showOtpModal && (
+                      <div className="otp-modal" style={{
+                        position: 'fixed',
+                        top: '50%',
+                        left: '50%',
+                        textAlign: 'center',
+                        background: 'white',
+                        padding: '10px',
+                        border: '1px solid #ccc',
+                        transform: 'translate(-50%, -50%)',
+                        width: '25%',
+                        zIndex: 1000,
+                      }}>
+                        <h3>Enter OTP Code</h3>
+                        <form onSubmit={handleOtpSubmit}>
+                          <input
+                            type="text"
+                            value={otpCode}
+                            onChange={(e) => setOtpCode(e.target.value)}
+                            maxLength={6}
+                            required
+                            placeholder="6-digit code"
+                            style={{ fontSize: '18px', padding: '8px', width: '100%'}}
+                          />
+                          <div style={{ marginTop: '10px', width: '100%', display: 'flex', flexDirection: 'colume', gap: '0.4rem' }}>
+                            <button  type="submit" disabled={loading}>
+                              {loading ? 'Verifying...' : 'Verify'}
+                            </button>
+                            <button  type="button" onClick={() => setShowOtpModal(false)} style={{ backgroundColor: 'red', width: '100%', border: '1px solid red'  }}>
+                              Cancel
+                            </button>
+                          </div>
+                          {error && <p style={{ color: 'red' }}>{error}</p>}
+                        </form>
+                      </div>
+                    )}
+            
+  
+                  </div>
+        )}
+
+
+
+
+
+
             
 
 
         </div>
 
       </div>
+
+       <div className="ffoters">
+        <div className='firstfoot'>
+          <div className='imageciver'><img src={cicerfoorer} alt="cicerfoorer" /></div>
+          <div style={{display: 'flex', flexDirection: 'column'}}>
+            <h4>We're here to help you!</h4>
+            <p>You can ask a question, file a support ticket, manage requests, or report an issue. Our support team will get back to you via email.</p>
+          </div>
+          <div  style={{display: 'flex', flexDirection: 'column'}}><button onClick={contactreload}>Get Support Now</button></div>
+        </div>
+
+        <div className="lstbnts">
+          <span>&copy; 2025 Jetstream Federal Credit Union — All Rights Reserved</span>
+          <div className='termslas'>
+            <span >Terms</span>
+            <span >Privacy</span>
+            <span onClick={help}>Help</span>
+          </div>
+
+        </div>
+
+        </div>
+
+
     </DashbaordAcccount>
   )
 }

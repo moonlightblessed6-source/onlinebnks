@@ -391,8 +391,7 @@ width: 100%;
 export const ContactUs = styled.main`
 
  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-size: 15px;
+  font-size: 17px;
 
 a{
     text-decoration: none;
@@ -417,30 +416,58 @@ margin: auto;
 padding: 0.8rem 0rem;
 }
 
-.form{
-    width: 90%;
-    margin: auto;
-    margin-block: 2rem;
-}
-.contactwrapers{
+.contactus{
     display: flex;
-    gap: 7rem;
-    margin-block: 2rem;
+    width:  90%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+    gap: 2rem;
 
 }
 
-.contactwrapers>div{
+.contactwrapper{
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 10px;
 }
 
-.cals{
-display: flex;
-gap: 0.5rem;
-align-items: center;
+.contactwrapper>div{
+    border-top: 1px solid lightgrey;
+}
+
+.lasrtcon{
+    background-color: #f9f8f6;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+h2{
+    text-align: center;
+    color: #007cba;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .contactus{
+        display: flex;
+        flex-direction: column;
+    }
     
 }
+
+
 
 `
 
@@ -757,6 +784,7 @@ background-color: #121a27;
     justify-content: center;
     align-items: center;
     margin: auto;
+    position: relative;
   
 }
 .menubardrop{
@@ -778,6 +806,7 @@ a{
     gap: 1rem;
     align-items: center;
     justify-content: center;
+ 
 }
 
 a{
@@ -785,6 +814,7 @@ a{
     color: white;
     opacity: .8;
 }
+
 
 @media screen and (max-width: 1000px) {
     .left{
@@ -912,6 +942,12 @@ color: whitesmoke;
 
 }
 
+.wrapelastfooter{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+}
 .wedobsiness{
     display: flex;
     gap: 1rem;
@@ -921,10 +957,15 @@ color: whitesmoke;
     margin-top: 2rem;
 }
 
+.wedobsiness>img{
+    width: 50px;
+}
+
 .mrp{
     width: 90%;
     margin: auto;  
     text-align: end;
+    font-size: 15px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -1371,7 +1412,8 @@ a{
 
 export const DashbaordAcccount = styled.main`
 font-family: "Lato", sans-serif;
-
+min-height: 100vh;
+ background-color: #121a27;
 
 .dashboardwrapper{
     display: flex;
@@ -1459,6 +1501,7 @@ a{
     /* background-color: green; */
     border-left: 2px solid lightgray;
     border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
     padding: 1rem;
     width: 100%;
 }
@@ -1527,7 +1570,13 @@ button{
 
 
 
- 
+ .rightInof{
+
+    border-left: 2px none;
+    border-bottom:none;
+    padding: 1rem;
+
+}
 
    .table {
     width: 90%;
@@ -1557,56 +1606,44 @@ button{
 
 
 
-.transaction-list {
-  border: 1px solid #ccc;
-  border-radius: 6px;
+
+
+.tractionhistoty {
+    
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+  box-sizing: border-box; /* or better: set globally */
   overflow-x: auto;
 }
 
-/* Table-like layout for desktop */
-.transaction-header,
-.transaction-row {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  padding: 0.75rem;
-  border-bottom: 1px solid #ddd;
+.tractionhistoty table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
 }
 
-.transaction-header {
-  font-weight: bold;
-  background-color: #f4f4f4;
+.tractionhistoty th,
+.tractionhistoty td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
 }
 
-/* 💡 Mobile view (max width 1000px) */
-@media (max-width: 1000px) {
-  .transaction-header {
-    display: none; /* hide the header on mobile */
-  }
-
-  .transaction-row {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #eee;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border-radius: 6px;
-    background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  }
-
-  .transaction-row > div {
-    margin: 0.25rem 0;
-    color: black;
-  }
-
-  .transaction-row > div::before {
-    content: attr(data-label) ": ";
-    font-weight: bold;
-    color: #444;
-  }
+.tractionhistoty th {
+  background-color: #f2f2f2;
+  color: black;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
-
+/* Responsive styles */
+@media screen and (max-width: 1000px) {
+  .tractionhistoty {
+    overflow-x: auto;
+  }
+}
 
 
 /* ======================================================================================== */
@@ -1746,7 +1783,7 @@ button{
     /* border: 0.3px solid lightgray; */
     border-radius: 4px;
     box-shadow: 3px 3px 6px;
-    font-size: 20px;
+
 }
 
 .welcomname{
@@ -1808,7 +1845,8 @@ button{
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    /* padding: 2rem 2rem; */
+    font-size: 17px;
+
 }
 
 .checkingbox{
@@ -1837,26 +1875,160 @@ button{
 }
 
 
+.lastbutton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 1rem;
+      gap: 2rem;
+}
+
+.charts{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 2px 2px 4px;
+    padding: 1.5rem;
+}
+
+.charts>div{
+    padding: 1.4rem;
+    background-color: #465157;
+    border-radius: 8px;
+
+    
+}
+
+
+    .flexthem{
+        display: flex;
+    
+    }
+
+.styhere{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.styOne{
+    gap: 7px;
+       display: flex;
+    flex-direction: column;
+}
+
 .bittons {
     display: flex;
     width: 500px;
     margin: 3rem auto;
-    box-shadow: 4px 4px 8px;
-    padding: 2rem;
+  flex-direction: column;
+     box-shadow: 2px 2px 4px;
+    padding: 1.5rem;
+  
 }
-
-.bittons > div {
-    height: 150px;
-    width: 150px;
+.colorscircl{
+    gap: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circles {
+    height: 260px;
+    width: 260px;
     border-radius: 50%;
-   background: linear-gradient(59deg, green 50%, red 50%);
+   background: linear-gradient(100deg, green 50%, red 50%);
     margin: 3rem auto;
 }
 
+.ffoters{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
 
+}
+.firstfoot{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 1px 1px 3px;
+    padding: 2rem;
+     
+    width: 90%;
+    margin: auto;
+    /* gap: 1rem; */
+
+    
+  
+}
+
+.imageciver>img{
+    border-radius: 100%;
+    height: 70px;
+    width: 70px;
+}
+
+.lstbnts{
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 3px;
+    padding: 1.4rem 5rem;
+}
+
+.termslas{
+    display: flex;
+    gap: 1rem;
+    color: blue;
+}
 
 
 @media screen and (max-width: 1000px) {
+
+    .lastbutton{
+        flex-direction: column;
+    }
+
+    .bittons{
+        width: 100%;
+        margin-top: 0rem;
+    }
+
+    .usd{
+        display: none;
+    }
+    .balacs{
+        margin-top: -1rem;
+    }
+
+      .firstfoot {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .lstbnts {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.4rem 2rem;
+    text-align: center;
+  }
+
+  .termslas {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .imageciver > img {
+    height: 60px;
+    width: 60px;
+  }
+
+    
 
     .dashboardwrapper{
         position: relative;
@@ -1926,20 +2098,7 @@ button{
       padding: 1.2rem;
   }
 
-  .bittons {
-      flex-direction: column;
-      width: 100%;
-      padding: 1rem;
-      box-shadow: none;
-      align-items: center;
-  }
 
-  .bittons > div {
-      height: 120px;
-      width: 120px;
-      margin: 1rem 0;
-      background: linear-gradient(59deg, green 50%, red 50%);
-  }
 
   .headerss{
     flex-direction: column;
@@ -1955,3 +2114,10 @@ button{
 
 
 `
+
+
+
+
+
+
+
