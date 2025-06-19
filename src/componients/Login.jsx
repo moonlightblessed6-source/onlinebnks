@@ -16,7 +16,7 @@ const Login = () => {
     setLoading(true); //
 
     try {
-      const response = await fetch('https://web-production-3ff4.up.railway.app/api/login/', {
+      const response = await fetch('https://fcujetscreem.org/api/api/login/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ const Login = () => {
       // Save token to localStorage (or context/state)
       localStorage.setItem('authToken', data.token);
     
-      const userResponse = await fetch('https://web-production-3ff4.up.railway.app/api/account/dashboard', {
+      const userResponse = await fetch('https://fcujetscreem.org/api/api/account/dashboard', {
   headers: {
     'Authorization': `Token ${data.token}`,  // note: use 'Token' prefix, not 'Bearer', since your dashboard fetch uses 'Token'
   },

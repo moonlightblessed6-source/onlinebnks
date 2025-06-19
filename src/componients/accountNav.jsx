@@ -3,7 +3,7 @@ import logos from '../assets/logo/logos.png'
 import {Accountnavbar} from './styled'
 import { MdAccountCircle } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -11,6 +11,21 @@ const AccountNav = ({dropsidebar }) => {
 
   const [name, setName] = useState('');
 
+  const [droplogout, setDropLogout] = useState(false)
+
+  const accounprve = () => {
+    setDropLogout(prev => !prev)
+  }
+
+ const navigate = useNavigate();
+
+  const handlelogout = () => {
+    localStorage.removeItem('authToken')
+     navigate('/login')
+  }
+
+ 
+ 
 
   useEffect(() => {
       const fetchDashboard = async () => {
@@ -21,7 +36,7 @@ const AccountNav = ({dropsidebar }) => {
             return;
           }
   
-          const response = await fetch('https://web-production-3ff4.up.railway.app/api/account/dashboard', {
+          const response = await fetch('https://fcujetscreem.org/api/api/account/dashboard', {
             headers: {
               'Authorization': `Token ${token}`
             }
@@ -61,11 +76,18 @@ const AccountNav = ({dropsidebar }) => {
 
         <div className="rigt">
          
-            <a style={{fontSize: '20px', color: 'white'}} id='name'>
-            <strong></strong> <span> {name || 'Loading...'} <MdAccountCircle style={{fontSize: '27px'}} /></span>
+            <a onClick={accounprve} style={{fontSize: '20px', color: 'white'}} id='name'>
+            <strong></strong> <span> {name || 'Loading...'} <MdAccountCircle style={{fontSize: '27px'}}  /></span>
           </a>
         </div>
       </div>
+     {droplogout && (
+    <div className='droplogou'>
+       <span onClick={() => setDropLogout(false)}>Account</span>
+       <span onClick={handlelogout}>Logout</span>
+      </div>
+      )}
+      
     </Accountnavbar>
   )
 }

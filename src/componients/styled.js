@@ -766,10 +766,42 @@ image{
 
 
 export const Accountnavbar = styled.main`
-padding: 1rem 2rem;
 background-color: #121a27;
 
-  
+.droplogou {
+    border: 2px solid whitesmoke;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+    position: absolute;
+    right: 4%;
+    gap: 5px;
+    padding: 1rem;
+}
+
+.droplogou>span{
+    cursor: pointer;
+    font-weight: 800;
+}
+
+@media screen and (max-width: 800px) {
+  .droplogou {
+    width: 30%;         
+    position: absolute; 
+    right: 7%;          /* sticks to right */
+    top: 30px;         /* adjust as needed */
+    padding: 0.5rem;    
+    background-color: #f0f0f0;
+    z-index: 1000;
+  }
+}
+
+
+
+
+
 
 .left{
     width: 100%;
@@ -785,6 +817,8 @@ background-color: #121a27;
     align-items: center;
     margin: auto;
     position: relative;
+    width: 90%;
+    margin: auto;
   
 }
 .menubardrop{
