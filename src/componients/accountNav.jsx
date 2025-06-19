@@ -21,7 +21,7 @@ const AccountNav = ({dropsidebar }) => {
             return;
           }
   
-          const response = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
+          const response = await fetch('https://web-production-3ff4.up.railway.app/api/account/dashboard', {
             headers: {
               'Authorization': `Token ${token}`
             }
@@ -46,6 +46,9 @@ const AccountNav = ({dropsidebar }) => {
       fetchDashboard();
     }, []);
 
+
+   
+
   return (
     
     <Accountnavbar>
@@ -59,7 +62,7 @@ const AccountNav = ({dropsidebar }) => {
         <div className="rigt">
          
             <a style={{fontSize: '20px', color: 'white'}} id='name'>
-            <strong></strong> <span> {name || 'Loading...'} <MdAccountCircle style={{fontSize: '27px'}}  /></span>
+            <strong></strong> <span> {name || 'Loading...'} <MdAccountCircle style={{fontSize: '27px'}} /></span>
           </a>
         </div>
       </div>

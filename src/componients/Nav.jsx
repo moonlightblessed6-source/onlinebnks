@@ -74,10 +74,10 @@ const closedrop = () => {
               ):(
                 <div className="topdrop">
               <div className="closedrop" onClick={closedrop}><MdOutlineClose /></div>
+              <Link to='/' onClick={() => setMeueDisplay(false)}>Home</Link>
               <Link to='/personal' onClick={() => setMeueDisplay(false)}>Personal</Link>
               <Link to='/business' onClick={() => setMeueDisplay(false)}>Business</Link>
               <Link to='/rouces' onClick={() => setMeueDisplay(false)}>Resources</Link>
-              <Link onClick={() => setMeueDisplay(false)}>Insurance</Link>
               <Link to='/about' onClick={() => setMeueDisplay(false)}>About</Link>
               <Link to='/contact' onClick={() => setMeueDisplay(false)}>Contact Us</Link>
               <Link onClick={() => setMeueDisplay(false)}>Help</Link>
