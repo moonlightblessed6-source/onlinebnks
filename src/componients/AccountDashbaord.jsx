@@ -677,7 +677,7 @@ const countries = [
 
               <div className='secondboxcheck'>
                 <div className='trs'><span style={{fontSize: '20px'}}>Checking Account</span> <span style={{color: '#224999', fontWeight: '900', fontSize: '15px', cursor: 'pointer'}} onClick={() => setCurrentTab('transfermoney')}>Transfer Funds</span></div>
-                <div className="checkingbox">
+                <div className="checkingbox" onClick={() => setCurrentTab('tractionhistoty')}>
                   <span> Checking&nbsp;&nbsp; {accountNumber}</span>
                   <span>$&nbsp;{balance != null ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) : '0.00'}</span>
                 </div>
