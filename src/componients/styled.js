@@ -819,6 +819,7 @@ background-color: #121a27;
     position: relative;
     width: 90%;
     margin: auto;
+    padding: 1rem;
   
 }
 .menubardrop{

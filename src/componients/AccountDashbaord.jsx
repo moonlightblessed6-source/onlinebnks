@@ -659,7 +659,7 @@ const countries = [
 
                 <div className='seconbox'>
                  <span>Available balance</span>
-                 <div style={{display: 'flex', flexDirection: 'column', fontSize: '30px'}}>
+                 <div style={{display: 'flex', flexDirection: 'column', fontSize: '30px'}} onClick={() => setCurrentTab('tractionhistoty')}>
                   <span className='usd'><strong>USD</strong></span>
                  <span className='balacs'><strong>$&nbsp;{balance != null ? new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance) : '0.00'}</strong></span>
                  </div>
