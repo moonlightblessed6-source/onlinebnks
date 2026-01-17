@@ -4,6 +4,7 @@ import {Accountnavbar} from './styled'
 import { MdAccountCircle } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, useNavigate } from 'react-router-dom';
+import DashboardButton from './DashboardButton'
 
 
 
@@ -36,7 +37,7 @@ const AccountNav = ({dropsidebar }) => {
             return;
           }
   
-          const response = await fetch('https://fcujetscreem.org/api/api/account/dashboard', {
+          const response = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
             headers: {
               'Authorization': `Token ${token}`
             }
@@ -83,7 +84,7 @@ const AccountNav = ({dropsidebar }) => {
       </div>
      {droplogout && (
     <div className='droplogou'>
-       <span onClick={() => setDropLogout(false)}>Account</span>
+       <span onClick={() => window.location.reload()}>Account</span>
        <span onClick={handlelogout}>Logout</span>
       </div>
       )}

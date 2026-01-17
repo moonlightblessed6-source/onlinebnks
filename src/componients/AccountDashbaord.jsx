@@ -30,9 +30,17 @@ const [currentTab, setCurrentTab] = useState(() => {
   return localStorage.getItem('currentTab') || 'Dashboard';
 });
 
+// useEffect(() => {
+//   localStorage.setItem('currentTab', currentTab);
+// }, [currentTab]);
+
+
+
 useEffect(() => {
-  localStorage.setItem('currentTab', currentTab);
+  sessionStorage.setItem('currentTab', currentTab);
 }, [currentTab]);
+
+
       // ✅ useState declarations (in order)
   // const [currentTab, setCurrentTab] = useState('Dashboard');
   const [balance, setBalance] = useState(null);
@@ -55,7 +63,7 @@ useEffect(() => {
   const [receiverName, setReceiverName] = useState('');
   const [receiverBank, setReceiverBank] = useState('');
   const [swiftCode, setSwiftCode] = useState('');
-  const [ibanfild, setIbanFild] = useState('');
+  // const [ibanfild, setIbanFild] = useState('');
   const [recipientAddress, setRecipientAddress] = useState('');
   const [purpose, setPurpose] = useState('');
   const [amount, setAmount] = useState('');
@@ -87,7 +95,7 @@ useEffect(() => {
                   const token = localStorage.getItem('authToken');
                   if (!token) throw new Error('No auth token found');
           
-                  const res = await fetch('https://fcujetscreem.org/api/api/transactions/history/', {
+                  const res = await fetch('http://127.0.0.1:8000/api/transactions/history/', {
                     headers: {
                       Authorization: `Token ${token}`,
                       'Content-Type': 'application/json',
@@ -122,7 +130,7 @@ useEffect(() => {
         const token = localStorage.getItem('authToken');
         if (!token) throw new Error('No auth token found');
 
-        const res = await fetch('https://fcujetscreem.org/api/api/account/dashboard', {
+        const res = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
           headers: { Authorization: `Token ${token}` },
         });
 
@@ -183,7 +191,7 @@ useEffect(() => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('No auth token');
 
-      const res = await fetch('https://fcujetscreem.org/api/api/transfers/', {
+      const res = await fetch('http://127.0.0.1:8000/api/transfers/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -224,7 +232,7 @@ useEffect(() => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('No auth token');
 
-      const res = await fetch(`https://fcujetscreem.org/api/api/transfers/${transferId}/verify/`, {
+      const res = await fetch(`http://127.0.0.1:8000/api/transfers/${transferId}/verify/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -938,10 +946,10 @@ const countries = [
                         <label>Beneficiary Account Number</label>
                         <input type="text" value={receiverAccount} onChange={(e) => setReceiverAccount(e.target.value)} required />
                       </div>
-                      <div>
+                      {/* <div>
                         <label>IBAN</label>
                      <input type="text" value={ibanfild} onChange={(e) => setIbanFild(e.target.value)}/>
-                      </div>
+                      </div> */}
                       <div>
                         <label>Beneficiary Name</label>
                         <input type="text" value={receiverName} onChange={(e) => setReceiverName(e.target.value)} required />

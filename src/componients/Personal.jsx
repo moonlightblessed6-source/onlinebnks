@@ -1,6 +1,6 @@
 import React from 'react'
 import {Personalpr} from './styled'
-import personalBanner from '..//assets/personal/personal.png'
+import personalBanner from '../assets/personal/personal.png'
 import { Link } from 'react-router-dom'
 
 const Personal = () => {

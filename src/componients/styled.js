@@ -1450,6 +1450,7 @@ font-family: "Lato", sans-serif;
 min-height: 100vh;
  background-color: #121a27;
 
+
 .dashboardwrapper{
     display: flex;
     background-color: #121a27;
@@ -1473,6 +1474,8 @@ min-height: 100vh;
     gap: 1rem;
     
 }
+
+
 
 .linkbtn>a>button{
     padding: 0.5rem 2rem;
@@ -1724,10 +1727,11 @@ form>div{
     margin: 1rem auto;
 }
 
-input{
+input, select{
     padding: 0.3rem 1rem;
     outline: none;
     border-radius: 8px;
+    font-size: 16px;
 }
 
 button{

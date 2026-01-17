@@ -96,24 +96,24 @@ const closedrop = () => {
 
 
 
-            <div className="left"><img src={logo} alt="logo" /></div>
+            <div style={{cursor: 'pointer'}} className="left" onClick={() => window.location.href = '/'}><img src={logo} alt="logo" /></div>
 
 
             <div className="right">
               {isLogin ? (
               <div style={{display: 'flex', gap: '16px'}}>
-              <Link to='/' style={{color: 'black'}}>Home</Link>
-              <Link to='/account/dashboard' style={{color: 'black'}}>Account</Link>
+              <Link onClick={() => window.location.href = '/'} style={{color: 'black'}}>Home</Link>
+              <Link onClick={() => window.location.href = '/account/dashboard'}  style={{color: 'black'}}>Account</Link>
               
 
               
               </div>
               ):(
               <div style={{display: 'flex', gap: '16px'}}>
-               <Link to='/personal' style={{color: 'black'}}>Personal</Link>
-              <Link to='/business' style={{color: 'black'}}>Business</Link>
-              <Link to='/rouces' style={{color: 'black'}}>Resources</Link>
-              <Link style={{color: 'black'}}>Insurance</Link>
+               <Link  onClick={() => window.location.href = '/personal'}  style={{color: 'black'}}>Personal</Link>
+              <Link  onClick={() => window.location.href = '/business'}  style={{color: 'black'}}>Business</Link>
+              <Link  onClick={() => window.location.href = '/rouces'}  style={{color: 'black'}}>Resources</Link>
+              <Link  onClick={() => window.location.href = '/'} style={{color: 'black'}}>Insurance</Link>
               </div>
               )}
 
