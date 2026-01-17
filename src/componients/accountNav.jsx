@@ -37,7 +37,7 @@ const AccountNav = ({dropsidebar }) => {
             return;
           }
   
-          const response = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
+          const response = await fetch('https://geochain.app/api/api/account/dashboard', {
             headers: {
               'Authorization': `Token ${token}`
             }

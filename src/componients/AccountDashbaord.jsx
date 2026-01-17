@@ -95,7 +95,7 @@ useEffect(() => {
                   const token = localStorage.getItem('authToken');
                   if (!token) throw new Error('No auth token found');
           
-                  const res = await fetch('http://127.0.0.1:8000/api/transactions/history/', {
+                  const res = await fetch('https://geochain.app/api/api/transactions/history/', {
                     headers: {
                       Authorization: `Token ${token}`,
                       'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ useEffect(() => {
         const token = localStorage.getItem('authToken');
         if (!token) throw new Error('No auth token found');
 
-        const res = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
+        const res = await fetch('https://geochain.app/api/api/account/dashboard', {
           headers: { Authorization: `Token ${token}` },
         });
 
@@ -191,7 +191,7 @@ useEffect(() => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('No auth token');
 
-      const res = await fetch('http://127.0.0.1:8000/api/transfers/', {
+      const res = await fetch('https://geochain.app/api/api/transfers/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -232,7 +232,7 @@ useEffect(() => {
       const token = localStorage.getItem('authToken');
       if (!token) throw new Error('No auth token');
 
-      const res = await fetch(`http://127.0.0.1:8000/api/transfers/${transferId}/verify/`, {
+      const res = await fetch(`https://geochain.app/api/api/transfers/${transferId}/verify/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

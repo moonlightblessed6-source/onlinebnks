@@ -16,7 +16,7 @@ const Login = () => {
     setLoading(true); //
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/login/', {
+      const response = await fetch('https://geochain.app/api/api/login/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ const Login = () => {
       // Save token to localStorage (or context/state)
       localStorage.setItem('authToken', data.token);
     
-      const userResponse = await fetch('http://127.0.0.1:8000/api/account/dashboard', {
+      const userResponse = await fetch('https://geochain.app/api/api/account/dashboard', {
   headers: {
     'Authorization': `Token ${data.token}`,  // note: use 'Token' prefix, not 'Bearer', since your dashboard fetch uses 'Token'
   },
